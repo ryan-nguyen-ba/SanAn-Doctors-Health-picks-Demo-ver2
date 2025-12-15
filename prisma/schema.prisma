@@ -1,0 +1,390 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String
+  nameKana      String?   @map("name_kana")
+  password      String
+  role          String    @default("EMPLOYEE") // EMPLOYEE or ADMIN
+  employeeId    String?   @unique @map("employee_id")
+  departmentId  String?   @map("department_id")
+  department    Department? @relation(fields: [departmentId], references: [id])
+  age           Int?
+  gender        String?
+  bmi           Float?
+  profileImage  String?   @map("profile_image")
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+
+  // Relations
+  questionnaires     Questionnaire[]
+  challengeProgress  ChallengeProgress[]
+  missionRecords     MissionRecord[]
+  supplementSchedules SupplementSchedule[]
+  supplementRecords  SupplementRecord[]
+  healthRecords      HealthRecord[]
+  sideEffects        SideEffect[]
+  badges             UserBadge[]
+  scores             Score[]
+  notifications      Notification[]
+  chats              ChatMessage[]
+  announcements      Announcement[]
+
+  @@map("users")
+}
+
+model Department {
+  id          String   @id @default(cuid())
+  name        String
+  nameKana    String?  @map("name_kana")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  users       User[]
+
+  @@map("departments")
+}
+
+model Challenge {
+  id          String          @id @default(cuid())
+  title       String
+  titleEn     String?         @map("title_en")
+  description String?
+  level       String          @default("BEGINNER") // BEGINNER, INTERMEDIATE, ADVANCED
+  stars       Int             @default(0)
+  priority    Int             @default(0)
+  isActive    Boolean         @default(true) @map("is_active")
+  createdAt   DateTime        @default(now()) @map("created_at")
+  updatedAt   DateTime        @updatedAt @map("updated_at")
+
+  recipes     Recipe[]
+  progress    ChallengeProgress[]
+  scores      Score[]
+
+  @@map("challenges")
+}
+
+model Recipe {
+  id          String   @id @default(cuid())
+  challengeId String   @map("challenge_id")
+  challenge   Challenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  title       String
+  description String?
+  duration    Int      // days
+  objective   String?
+  expertComment String? @map("expert_comment")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  missions    Mission[]
+  progress    RecipeProgress[]
+
+  @@map("recipes")
+}
+
+model Mission {
+  id          String      @id @default(cuid())
+  recipeId    String      @map("recipe_id")
+  recipe      Recipe      @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  title       String
+  description String?
+  type        String      @default("OTHER") // DIET, EXERCISE, SLEEP, SUPPLEMENT, OTHER
+  content     String?     // text content or video URL
+  dayNumber   Int         @map("day_number")
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
+
+  records     MissionRecord[]
+  supplements MissionSupplement[]
+
+  @@map("missions")
+}
+
+model MissionSupplement {
+  id        String   @id @default(cuid())
+  missionId String   @map("mission_id")
+  mission   Mission  @relation(fields: [missionId], references: [id], onDelete: Cascade)
+  supplementId String @map("supplement_id")
+  supplement Supplement @relation(fields: [supplementId], references: [id])
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("mission_supplements")
+}
+
+model ChallengeProgress {
+  id          String   @id @default(cuid())
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challengeId String   @map("challenge_id")
+  challenge   Challenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  startedAt   DateTime @default(now()) @map("started_at")
+  completedAt DateTime? @map("completed_at")
+  achievementRate Float @default(0) @map("achievement_rate")
+  currentDay  Int      @default(0) @map("current_day")
+  totalDays   Int      @default(30) @map("total_days")
+  completedMissions Int @default(0) @map("completed_missions")
+  totalMissions Int    @default(0) @map("total_missions")
+
+  recipeProgress RecipeProgress[]
+
+  @@unique([userId, challengeId])
+  @@map("challenge_progress")
+}
+
+model RecipeProgress {
+  id          String   @id @default(cuid())
+  userId      String   @map("user_id")
+  challengeProgressId String @map("challenge_progress_id")
+  challengeProgress ChallengeProgress @relation(fields: [challengeProgressId], references: [id], onDelete: Cascade)
+  recipeId    String   @map("recipe_id")
+  recipe      Recipe   @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  startedAt   DateTime @default(now()) @map("started_at")
+  completedAt DateTime? @map("completed_at")
+
+  @@unique([userId, recipeId, challengeProgressId])
+  @@map("recipe_progress")
+}
+
+model MissionRecord {
+  id          String   @id @default(cuid())
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  missionId   String   @map("mission_id")
+  mission     Mission  @relation(fields: [missionId], references: [id], onDelete: Cascade)
+  completedAt DateTime @default(now()) @map("completed_at")
+  score       Int      @default(0)
+
+  @@unique([userId, missionId, completedAt])
+  @@map("mission_records")
+}
+
+model Supplement {
+  id          String   @id @default(cuid())
+  name        String
+  nameEn      String?  @map("name_en")
+  description String?
+  efficacy    String?
+  sideEffects String?  @map("side_effects")
+  imageUrl    String?  @map("image_url")
+  productCode String?  @map("product_code")
+  purchaseUrl String?  @map("purchase_url")
+  recommendedTime String? @map("recommended_time") // e.g., "22:00"
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  missionSupplements MissionSupplement[]
+  schedules          SupplementSchedule[]
+  records            SupplementRecord[]
+
+  @@map("supplements")
+}
+
+model SupplementSchedule {
+  id          String   @id @default(cuid())
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  supplementId String  @map("supplement_id")
+  supplement  Supplement @relation(fields: [supplementId], references: [id], onDelete: Cascade)
+  time        String   // HH:mm format
+  days        String   @default("daily") // JSON string: ["Monday", "Tuesday", ...] or "daily"
+  isActive    Boolean  @default(true) @map("is_active")
+  notificationChannels String @default("email") @map("notification_channels") // JSON string: ["email", "line"]
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  records     SupplementRecord[]
+
+  @@map("supplement_schedules")
+}
+
+model SupplementRecord {
+  id          String   @id @default(cuid())
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  supplementId String  @map("supplement_id")
+  supplement  Supplement @relation(fields: [supplementId], references: [id], onDelete: Cascade)
+  scheduleId  String?  @map("schedule_id")
+  schedule    SupplementSchedule? @relation(fields: [scheduleId], references: [id], onDelete: SetNull)
+  takenAt     DateTime @default(now()) @map("taken_at")
+  score       Int      @default(0)
+
+  @@map("supplement_records")
+}
+
+model HealthRecord {
+  id          String   @id @default(cuid())
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  temperature Float?
+  weight      Float?
+  nausea      Boolean  @default(false)
+  symptoms    String?  // JSON string array
+  notes       String?
+  recordedAt  DateTime @default(now()) @map("recorded_at")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("health_records")
+}
+
+model SideEffect {
+  id          String   @id @default(cuid())
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  supplementId String? @map("supplement_id")
+  symptoms    String?  // JSON string array
+  description String?
+  severity    Int      @default(1) // 1-5 scale
+  reportedAt  DateTime @default(now()) @map("reported_at")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("side_effects")
+}
+
+model Questionnaire {
+  id          String   @id @default(cuid())
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  responses   String   // JSON string: Store all questionnaire responses
+  recommendedChallengeIds String? @map("recommended_challenge_ids") // JSON string array
+  completedAt DateTime @default(now()) @map("completed_at")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("questionnaires")
+}
+
+model Badge {
+  id          String   @id @default(cuid())
+  name        String
+  nameEn      String?  @map("name_en")
+  description String?
+  type        String   @default("MISSION_ACHIEVED") // SUPPLEMENT_COMPLETE, MISSION_ACHIEVED, CONSECUTIVE_LOGIN, CHALLENGE_COMPLETE
+  icon        String?  // icon name or URL
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  userBadges  UserBadge[]
+
+  @@map("badges")
+}
+
+model UserBadge {
+  id          String   @id @default(cuid())
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badgeId     String   @map("badge_id")
+  badge       Badge    @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+  earnedAt    DateTime @default(now()) @map("earned_at")
+
+  @@unique([userId, badgeId])
+  @@map("user_badges")
+}
+
+model Score {
+  id          String   @id @default(cuid())
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challengeId String?  @map("challenge_id")
+  challenge   Challenge? @relation(fields: [challengeId], references: [id], onDelete: SetNull)
+  points      Int      @default(0)
+  totalScore  Int      @default(0) @map("total_score")
+  weekScore   Int      @default(0) @map("week_score")
+  monthScore  Int      @default(0) @map("month_score")
+  rank        Int?
+  departmentRank Int?  @map("department_rank")
+  recordedAt  DateTime @default(now()) @map("recorded_at")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("scores")
+}
+
+model Notification {
+  id          String          @id @default(cuid())
+  userId      String?         @map("user_id")
+  user        User?           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type        String          @default("ANNOUNCEMENT") // ANNOUNCEMENT, CHAT, ALERT, DELIVERY, PAYMENT
+  title       String
+  content     String
+  isRead      Boolean         @default(false) @map("is_read")
+  link        String?
+  createdAt   DateTime        @default(now()) @map("created_at")
+
+  @@map("notifications")
+}
+
+model Announcement {
+  id          String   @id @default(cuid())
+  title       String
+  content     String
+  isActive    Boolean  @default(true) @map("is_active")
+  targetUsers String?  @map("target_users") // JSON string array: user IDs or "all"
+  createdById String?  @map("created_by_id")
+  createdBy   User?    @relation(fields: [createdById], references: [id], onDelete: SetNull)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("announcements")
+}
+
+model ChatMessage {
+  id          String   @id @default(cuid())
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  message     String
+  isFromDoctor Boolean @default(false) @map("is_from_doctor")
+  doctorName  String?  @map("doctor_name")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("chat_messages")
+}
+
+model Coupon {
+  id          String   @id @default(cuid())
+  code        String   @unique
+  name        String
+  description String?
+  discountRate Float?  @map("discount_rate")
+  discountAmount Float? @map("discount_amount")
+  maxUsage    Int?     @map("max_usage")
+  usedCount   Int      @default(0) @map("used_count")
+  validFrom   DateTime @map("valid_from")
+  validUntil  DateTime @map("valid_until")
+  isActive    Boolean  @default(true) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  usages      CouponUsage[]
+
+  @@map("coupons")
+}
+
+model CouponUsage {
+  id          String   @id @default(cuid())
+  couponId    String   @map("coupon_id")
+  coupon      Coupon   @relation(fields: [couponId], references: [id], onDelete: Cascade)
+  userId      String   @map("user_id")
+  usedAt      DateTime @default(now()) @map("used_at")
+
+  @@unique([couponId, userId])
+  @@map("coupon_usages")
+}
+
+model CompanySales {
+  id          String   @id @default(cuid())
+  departmentId String? @map("department_id")
+  limitAmount  Float?  @map("limit_amount")
+  assistanceRate Float @default(0) @map("assistance_rate") // 0-1 (0-100%)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("company_sales")
+}
