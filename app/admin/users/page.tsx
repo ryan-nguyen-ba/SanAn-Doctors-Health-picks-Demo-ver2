@@ -94,9 +94,9 @@ export default function AdminUsersPage() {
                           className="hidden"
                           id="csv-upload"
                         />
-                        <label htmlFor="csv-upload">
-                          <Button variant="outline" className="font-semibold shadow-sm cursor-pointer" asChild>
-                            <span>ファイルを選択</span>
+                        <label htmlFor="csv-upload" className="cursor-pointer">
+                          <Button variant="outline" className="font-semibold shadow-sm cursor-pointer w-full">
+                            ファイルを選択
                           </Button>
                         </label>
                         {importFile && (

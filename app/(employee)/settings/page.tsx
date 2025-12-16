@@ -36,50 +36,54 @@ export default function SettingsPage() {
           <h1 className="text-3xl font-bold mb-2">設定・マイページ</h1>
         </div>
 
-        <Card className="mb-6 shadow-medium">
+        <Card className="mb-6 bg-white shadow-sm border border-gray-200">
           <CardHeader className="pb-4">
             <CardTitle className="text-xl font-bold text-gray-900">プロフィール編集</CardTitle>
           </CardHeader>
           <CardContent className="pt-0 space-y-5">
             <div>
-              <label className="block text-sm font-medium mb-2">名前</label>
+              <label className="block text-sm font-bold mb-2 text-gray-900">名前</label>
               <Input
                 value={profile.name}
                 onChange={(e) => setProfile({ ...profile, name: e.target.value })}
+                className="bg-white border border-gray-300 rounded-lg"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">名前（カナ）</label>
+              <label className="block text-sm font-bold mb-2 text-gray-900">名前（カナ）</label>
               <Input
                 value={profile.nameKana}
                 onChange={(e) =>
                   setProfile({ ...profile, nameKana: e.target.value })
                 }
+                className="bg-white border border-gray-300 rounded-lg"
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium mb-2">年齢</label>
+                <label className="block text-sm font-bold mb-2 text-gray-900">年齢</label>
                 <Input
                   type="number"
                   value={profile.age}
                   onChange={(e) =>
                     setProfile({ ...profile, age: parseInt(e.target.value) })
                   }
+                  className="bg-white border border-gray-300 rounded-lg"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2">性別</label>
+                <label className="block text-sm font-bold mb-2 text-gray-900">性別</label>
                 <Input
                   value={profile.gender}
                   onChange={(e) =>
                     setProfile({ ...profile, gender: e.target.value })
                   }
+                  className="bg-white border border-gray-300 rounded-lg"
                 />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">BMI</label>
+              <label className="block text-sm font-bold mb-2 text-gray-900">BMI</label>
               <Input
                 type="number"
                 step="0.1"
@@ -87,19 +91,20 @@ export default function SettingsPage() {
                 onChange={(e) =>
                   setProfile({ ...profile, bmi: parseFloat(e.target.value) })
                 }
+                className="bg-white border border-gray-300 rounded-lg"
               />
             </div>
             <Button className="font-semibold shadow-sm">保存</Button>
           </CardContent>
         </Card>
 
-        <Card className="mb-6 shadow-medium">
+        <Card className="mb-6 bg-white shadow-sm border border-gray-200">
           <CardHeader className="pb-4">
             <CardTitle className="text-xl font-bold text-gray-900">基本バイタル登録</CardTitle>
           </CardHeader>
           <CardContent className="pt-0 space-y-5">
             <div>
-              <label className="block text-sm font-medium mb-2">体温</label>
+              <label className="block text-sm font-bold mb-2 text-gray-900">体温</label>
               <Input
                 type="number"
                 step="0.1"
@@ -107,10 +112,11 @@ export default function SettingsPage() {
                 onChange={(e) =>
                   setVitals({ ...vitals, temperature: parseFloat(e.target.value) })
                 }
+                className="bg-white border border-gray-300 rounded-lg"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">体重</label>
+              <label className="block text-sm font-bold mb-2 text-gray-900">体重</label>
               <Input
                 type="number"
                 step="0.1"
@@ -118,30 +124,33 @@ export default function SettingsPage() {
                 onChange={(e) =>
                   setVitals({ ...vitals, weight: parseFloat(e.target.value) })
                 }
+                className="bg-white border border-gray-300 rounded-lg"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">睡眠時間</label>
+              <label className="block text-sm font-bold mb-2 text-gray-900">睡眠時間</label>
               <Input
                 type="number"
                 value={vitals.sleep}
                 onChange={(e) =>
                   setVitals({ ...vitals, sleep: parseInt(e.target.value) })
                 }
+                className="bg-white border border-gray-300 rounded-lg"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">気分</label>
+              <label className="block text-sm font-bold mb-2 text-gray-900">気分</label>
               <Input
                 value={vitals.mood}
                 onChange={(e) => setVitals({ ...vitals, mood: e.target.value })}
+                className="bg-white border border-gray-300 rounded-lg"
               />
             </div>
             <Button className="font-semibold shadow-sm">保存</Button>
           </CardContent>
         </Card>
 
-        <Card className="mb-6 shadow-medium">
+        <Card className="mb-6 bg-white shadow-sm border border-gray-200">
           <CardHeader className="pb-4">
             <CardTitle className="text-xl font-bold text-gray-900">チャレンジ履歴</CardTitle>
           </CardHeader>
@@ -159,7 +168,7 @@ export default function SettingsPage() {
           </CardContent>
         </Card>
 
-        <Card className="shadow-medium">
+        <Card className="bg-white shadow-sm border border-gray-200">
           <CardHeader className="pb-4">
             <CardTitle className="text-xl font-bold text-gray-900">通知設定</CardTitle>
           </CardHeader>

@@ -4,12 +4,6 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 async function main() {
-  // Clear existing data (optional - for clean seed)
-  await prisma.userBadge.deleteMany();
-  await prisma.notification.deleteMany();
-  await prisma.user.deleteMany();
-  await prisma.department.deleteMany();
-
   // Create departments
   const dept1 = await prisma.department.create({
     data: {
@@ -51,16 +45,6 @@ async function main() {
       role: "ADMIN",
       employeeId: "ADMIN001",
       departmentId: dept1.id,
-    },
-  });
-
-  const provider = await prisma.user.create({
-    data: {
-      email: "provider@example.com",
-      name: "プロバイダー",
-      password: hashedPassword,
-      role: "PROVIDER",
-      employeeId: "PROVIDER001",
     },
   });
 

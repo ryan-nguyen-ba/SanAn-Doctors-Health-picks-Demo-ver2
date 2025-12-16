@@ -31,9 +31,17 @@ export default function SignInPage() {
         setLoading(false);
       } else {
         // Wait a bit for session to update, then redirect
-        // The root page will handle proper redirect based on role
-        router.push("/");
-        router.refresh();
+        setTimeout(() => {
+          // Redirect based on user role
+          if (email === "provider@example.com") {
+            router.push("/provider/dashboard");
+          } else if (email === "admin@example.com") {
+            router.push("/admin/dashboard");
+          } else {
+            router.push("/home");
+          }
+          router.refresh();
+        }, 100);
       }
     } catch (error) {
       setError("ログインに失敗しました");
@@ -80,7 +88,12 @@ export default function SignInPage() {
                 className="rounded-xl border-2 focus:border-primary"
               />
             </div>
-            <Button type="submit" className="w-full font-bold shadow-large hover:shadow-glow" disabled={loading}>
+            <Button 
+              type="submit" 
+              className="w-full font-bold text-white shadow-lg hover:shadow-xl transition-all" 
+              style={{ background: 'linear-gradient(135deg, #FFD700, #FFA500)' }}
+              disabled={loading}
+            >
               {loading ? "ログイン中..." : "ログイン"}
             </Button>
           </form>

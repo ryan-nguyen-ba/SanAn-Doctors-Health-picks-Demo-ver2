@@ -75,12 +75,12 @@ export function Sidebar({ user, isAdmin = false, isProvider = false }: SidebarPr
   };
 
   return (
-    <div className="w-64 bg-gradient-to-b from-primary to-primary-dark min-h-screen flex flex-col shadow-large">
+    <div className="w-64 min-h-screen flex flex-col shadow-large" style={{ backgroundColor: '#FFD700' }}>
       {/* User Profile Section */}
       {user && (
-        <div className="p-6 border-b border-primary-darker/30 bg-primary/50 backdrop-blur-sm">
+        <div className="p-6 border-b" style={{ borderColor: 'rgba(230, 194, 0, 0.3)', backgroundColor: 'rgba(255, 215, 0, 0.5)' }}>
           <div className="flex items-center space-x-4">
-            <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-primary font-bold text-lg shadow-medium ring-2 ring-white/50">
+            <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center font-bold text-lg shadow-medium ring-2 ring-white/50" style={{ color: '#8B4513' }}>
               {user.profileImage ? (
                 <img
                   src={user.profileImage}
@@ -92,12 +92,12 @@ export function Sidebar({ user, isAdmin = false, isProvider = false }: SidebarPr
               )}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-white font-bold text-base truncate">{user.name}</p>
+              <p className="font-bold text-base truncate" style={{ color: '#8B4513' }}>{user.name}</p>
               {user.nameKana && (
-                <p className="text-primary-light text-xs mt-0.5 truncate">{user.nameKana}</p>
+                <p className="text-xs mt-0.5 truncate" style={{ color: '#A0522D' }}>{user.nameKana}</p>
               )}
               {user.employeeId && (
-                <p className="text-primary-light text-xs mt-1 font-medium">
+                <p className="text-xs mt-1 font-medium" style={{ color: '#A0522D' }}>
                   会員No. {user.employeeId}
                 </p>
               )}
@@ -119,11 +119,12 @@ export function Sidebar({ user, isAdmin = false, isProvider = false }: SidebarPr
                   className={cn(
                     "flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200",
                     isActive
-                      ? "bg-white text-primary font-bold shadow-medium"
-                      : "text-amber-100 hover:bg-white/10 hover:text-white"
+                      ? "bg-white font-bold shadow-medium"
+                      : "hover:bg-white/10"
                   )}
+                  style={isActive ? { color: '#8B4513' } : { color: '#8B4513' }}
                 >
-                  <Icon className={cn("w-5 h-5", isActive ? "text-primary" : "")} />
+                  <Icon className="w-5 h-5" />
                   <span className="text-sm">{item.label}</span>
                 </Link>
               </li>
@@ -133,12 +134,13 @@ export function Sidebar({ user, isAdmin = false, isProvider = false }: SidebarPr
       </nav>
 
       {/* Support Section */}
-      <div className="p-6 border-t border-primary-darker/30 bg-primary/30 backdrop-blur-sm">
-        <div className="text-white text-sm">
-          <p className="font-bold mb-2 text-white">サポート窓口</p>
+      <div className="p-6 border-t" style={{ borderColor: 'rgba(230, 194, 0, 0.3)', backgroundColor: 'rgba(255, 215, 0, 0.3)' }}>
+        <div className="text-sm">
+          <p className="font-bold mb-2" style={{ color: '#8B4513' }}>サポート窓口</p>
           <a
             href="mailto:support@healthpicks.com"
-            className="text-primary-light hover:text-white transition-colors text-xs break-all"
+            className="hover:underline transition-colors text-xs break-all"
+            style={{ color: '#A0522D' }}
           >
             support@healthpicks.com
           </a>
@@ -146,10 +148,11 @@ export function Sidebar({ user, isAdmin = false, isProvider = false }: SidebarPr
       </div>
 
       {/* Logout */}
-      <div className="p-4 border-t border-primary-darker/30">
-        <button 
+      <div className="p-4 border-t" style={{ borderColor: 'rgba(230, 194, 0, 0.3)' }}>
+        <button
           onClick={handleLogout}
-          className="flex items-center space-x-3 px-4 py-3 rounded-xl text-white hover:bg-white/10 w-full transition-all duration-200 font-medium"
+          className="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-white/10 w-full transition-all duration-200 font-medium"
+          style={{ color: '#8B4513' }}
         >
           <LogOut className="w-5 h-5" />
           <span className="text-sm">ログアウト</span>

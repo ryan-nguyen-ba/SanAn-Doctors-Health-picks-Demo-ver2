@@ -43,11 +43,11 @@ export function SurveyDueNotification() {
   }
 
   return (
-    <Card className="mb-6 shadow-medium border-2 border-primary/20 bg-gradient-to-r from-primary-light/20 to-white">
+    <Card className="mb-6 shadow-sm border border-yellow-200 bg-yellow-50">
       <CardContent className="p-4">
         <div className="flex items-start justify-between">
           <div className="flex items-start space-x-3 flex-1">
-            <div className="p-2 bg-primary rounded-lg flex-shrink-0">
+            <div className="p-2 rounded-lg flex-shrink-0" style={{ backgroundColor: '#FFD700' }}>
               <AlertCircle className="w-5 h-5 text-white" />
             </div>
             <div className="flex-1">
@@ -56,7 +56,7 @@ export function SurveyDueNotification() {
                 健康状態を把握し、最適なチャレンジをご提案するために、アンケートへのご回答をお願いいたします。
               </p>
               <Link href="/questionnaire">
-                <Button size="sm" className="font-semibold shadow-sm">
+                <Button size="sm" className="font-semibold text-white" style={{ backgroundColor: '#FFD700' }}>
                   アンケートに回答する
                 </Button>
               </Link>

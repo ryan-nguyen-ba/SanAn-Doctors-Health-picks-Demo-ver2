@@ -4,14 +4,15 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 249, 250, 251;
+  --background-end-rgb: 249, 250, 251;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-start-rgb));
   font-feature-settings: "rlig" 1, "calt" 1;
+  min-height: 100vh;
 }
 
 @layer utilities {

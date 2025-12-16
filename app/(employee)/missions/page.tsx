@@ -260,9 +260,9 @@ export default function MissionsPage() {
                   className="hidden"
                   id="meal-photo-upload"
                 />
-                <label htmlFor="meal-photo-upload">
-                  <Button variant="outline" className="font-semibold shadow-sm cursor-pointer" asChild>
-                    <span>写真を選択</span>
+                <label htmlFor="meal-photo-upload" className="cursor-pointer">
+                  <Button variant="outline" className="font-semibold shadow-sm cursor-pointer w-full">
+                    写真を選択
                   </Button>
                 </label>
               </div>

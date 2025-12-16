@@ -24,7 +24,7 @@ export function SupplementTimer({ schedules }: SupplementTimerProps) {
   const dayNames = ["日", "月", "火", "水", "木", "金", "土"];
 
   return (
-    <Card className="shadow-soft">
+    <Card className="bg-white shadow-sm border border-gray-200">
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
           <CardTitle className="text-lg font-bold text-gray-900">サプリタイマー</CardTitle>
@@ -34,7 +34,7 @@ export function SupplementTimer({ schedules }: SupplementTimerProps) {
         </div>
       </CardHeader>
       <CardContent className="pt-0">
-        <div className="mb-5 p-3 bg-primary-light/30 rounded-xl border border-primary/10">
+        <div className="mb-5 p-3 bg-gray-50 rounded-xl border border-gray-200">
           <div className="flex items-center space-x-2 text-sm text-gray-700 font-medium">
             <Calendar className="w-4 h-4 text-primary" />
             <span>

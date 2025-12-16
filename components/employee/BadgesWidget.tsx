@@ -17,12 +17,12 @@ interface BadgesWidgetProps {
 
 export function BadgesWidget({ badges }: BadgesWidgetProps) {
   return (
-    <Card className="shadow-soft">
+    <Card className="bg-white shadow-sm border border-gray-200">
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
-          <CardTitle className="text-lg font-bold text-gray-900">お勧めしたバッジ</CardTitle>
+          <CardTitle className="text-lg font-bold text-gray-900">取得したバッジ</CardTitle>
           <Link href="/badges" className="text-sm text-primary hover:text-primary-dark font-medium transition-colors">
-            全部見る →
+            全て見る →
           </Link>
         </div>
       </CardHeader>
@@ -30,7 +30,7 @@ export function BadgesWidget({ badges }: BadgesWidgetProps) {
         <div className="space-y-4">
           {badges.slice(0, 3).map((badge) => (
             <div key={badge.id} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition-colors">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-light to-primary-lighter flex items-center justify-center shadow-soft flex-shrink-0">
+              <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 border border-gray-200">
                 {badge.icon ? (
                   <span className="text-2xl">{badge.icon}</span>
                 ) : (

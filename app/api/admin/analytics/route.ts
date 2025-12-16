@@ -9,9 +9,12 @@ export async function GET() {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    // Calculate analytics
-    const totalUsers = await prisma.user.count();
-    const activeUsers = await prisma.user.count({
+    // Calculate analytics (using mock data for frontend demo)
+    const totalUsers = 100; // Mock data
+    const activeUsers = 75; // Mock data
+    /*
+    const totalUsers = await prisma.users.count();
+    const activeUsers = await prisma.users.count({
       where: {
         challengeProgress: {
           some: {
@@ -20,9 +23,11 @@ export async function GET() {
         },
       },
     });
-
+    */
     const utilizationRate = totalUsers > 0 ? (activeUsers / totalUsers) * 100 : 0;
 
+    const continuationData: any[] = []; // Mock data
+    /*
     const continuationData = await prisma.challengeProgress.groupBy({
       by: ["challengeId"],
       _count: true,
@@ -30,6 +35,7 @@ export async function GET() {
         completedAt: null,
       },
     });
+    */
 
     return NextResponse.json({
       utilizationRate,

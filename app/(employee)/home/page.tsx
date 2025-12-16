@@ -5,9 +5,7 @@ import { SupplementWidget } from "@/components/employee/SupplementWidget";
 import { BadgesWidget } from "@/components/employee/BadgesWidget";
 import { RankingWidget } from "@/components/employee/RankingWidget";
 import { SupplementTimer } from "@/components/employee/SupplementTimer";
-import { SurveyDueNotification } from "@/components/employee/SurveyDueNotification";
 import { getSession } from "@/lib/auth/session";
-import Link from "next/link";
 
 export default async function DashboardPage() {
   const session = await getSession();
@@ -18,7 +16,7 @@ export default async function DashboardPage() {
       type: "announcement" as const,
       count: 1,
       title: "お知らせ",
-      content: ["初回ご利用キャンペーンのお知らせが届きました。"],
+      content: ["キャンペーンの期間のお知らせがきました。"],
     },
     {
       type: "chat" as const,
@@ -32,26 +30,26 @@ export default async function DashboardPage() {
     {
       type: "alert" as const,
       count: 3,
-      title: "ミッション",
+      title: "通知",
       content: [
-        "そるそるミッション時間です。",
-        "睡眠の質改善です。",
+        "そそるミッションの期間です。",
+        "サプリタイマー 毎日のです。",
       ],
     },
     {
       type: "delivery" as const,
       count: 2,
-      title: "配送",
+      title: "配信",
       content: [
         "商品が発送されました。",
-        "商品が届きました。",
+        "商品が発送されました。",
       ],
     },
     {
       type: "payment" as const,
       count: 1,
       title: "お支払い",
-      content: ["課金が完了しました。"],
+      content: ["オンライン決済が完了しました。"],
     },
   ];
 
@@ -67,16 +65,16 @@ export default async function DashboardPage() {
       recipes: [
         {
           id: "1",
-          title: "夜を取り戻す、スマホ断ちレシピ",
-          description: "ブルーライトが睡眠の質を下げる原因。就寝2時間前からスマホを手放して、自然な睡眠リズムを取り戻そう。",
-          imageUrl: "/api/placeholder/400/300",
+          title: "寝る2時間前スマホOFF習慣",
+          description:
+            "今夜、寝る30分前からスマホやPC、テレビなどの画面を見るのをやめてみよう。",
           isCompleted: false,
         },
         {
           id: "2",
           title: "寝る2時間前スマホOFF習慣",
-          description: "今夜、寝る30分前からスマホやPC、テレビなどの画面を見るのをやめてみよう。",
-          imageUrl: "/api/placeholder/400/300",
+          description:
+            "今夜、寝る30分前からスマホやPC、テレビなどの画面を見るのをやめてみよう。",
           isCompleted: true,
         },
       ],
@@ -92,16 +90,15 @@ export default async function DashboardPage() {
       recipes: [
         {
           id: "3",
-          title: "疲れ知らずのカラダをつくるレシピ",
-          description: "毎日、同じでも疲れ知らずでいない。日中に集中できない時など、に生じること。",
-          imageUrl: "/api/placeholder/400/300",
+          title: "慣れ知らずのカラダをつくるレシピ",
+          description:
+            "毎日、同じでも慣れ知らずでいない。日中に集中できない時など、に生じること。",
           isCompleted: false,
         },
         {
           id: "4",
-          title: "病気に負けない「腸活」",
-          description: "腸内環境を整えて、免疫力を高めるレシピ。",
-          imageUrl: "/api/placeholder/400/300",
+          title: "疲労に負けない「筋肉飯」",
+          description: "疲労回復に効果的な栄養素を摂取するレシピ。",
           isCompleted: false,
         },
       ],
@@ -117,18 +114,18 @@ export default async function DashboardPage() {
   const badges = [
     {
       id: "1",
-      name: "サプリコンプリート",
-      earnedAt: "2023-08-01",
+      name: "サプリ3種コンプリート",
+      earnedAt: "2023-09-22",
     },
     {
       id: "2",
-      name: "S&Sミッション達成",
-      earnedAt: "2023-08-01",
+      name: "5日ミッション達成",
+      earnedAt: "2023-09-22",
     },
     {
       id: "3",
       name: "30日連続ログイン",
-      earnedAt: "2023-08-01",
+      earnedAt: "2023-09-22",
     },
   ];
 
@@ -149,17 +146,19 @@ export default async function DashboardPage() {
   const supplementSchedules = [
     {
       id: "1",
-      supplementName: "GABAα",
-      time: "22時40分",
+      supplementName: "GABA",
+      time: "22時00分",
       isDaily: true,
     },
     {
       id: "2",
-      supplementName: "マグネシウムα",
-      time: "22時40分",
+      supplementName: "マグネシウム",
+      time: "22時00分",
       isDaily: true,
     },
   ];
+
+  const totalNotifications = notifications.reduce((sum, item) => sum + item.count, 0);
 
   return (
     <EmployeeLayout
@@ -170,46 +169,43 @@ export default async function DashboardPage() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
-        <div className="mb-8 bg-white rounded-2xl p-6 md:p-8 shadow-soft border border-gray-100">
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
-            {/* Logo */}
-            <div className="text-center md:text-left flex-shrink-0">
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                Health Picks
-              </h1>
-            </div>
-            
-            {/* Family Image */}
-            <div className="flex-1 flex justify-center md:justify-end">
-              <div className="w-full max-w-md h-64 bg-gradient-to-br from-blue-100 via-blue-50 to-cyan-100 rounded-xl relative overflow-hidden flex items-center justify-center border-2 border-blue-200/50">
-                {/* Placeholder for family image */}
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-white/80 rounded-full flex items-center justify-center border-4 border-blue-300">
-                    <span className="text-4xl">👨‍👩‍👦‍👦</span>
-                  </div>
-                  <p className="text-blue-700 font-medium text-sm">家族のイラスト</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Tagline */}
-            <div className="text-center md:text-right flex-shrink-0">
-              <p className="text-xl md:text-2xl font-bold text-gray-900">
-                カラダに習慣<br />レシピで改善
+        <div className="mb-8">
+          <div className="bg-gradient-to-br from-yellow-100 via-orange-50 to-white rounded-3xl p-6 md:p-8 border-2 border-yellow-200 shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <p className="text-xs md:text-sm font-bold uppercase tracking-wide" style={{ color: "#A0522D" }}>
+                ようこそ
               </p>
+              <h1
+                className="text-3xl md:text-4xl font-black mt-2"
+                style={{ color: "#8B4513" }}
+              >
+                {(session?.user?.name || "加藤佳子")}さんのホーム
+              </h1>
+              <p className="mt-3 text-sm md:text-base font-medium" style={{ color: "#A0522D" }}>
+                今日のチャレンジ、ミッション、サプリメントの予定をここでまとめてチェックできます。
+              </p>
+            </div>
+            <div className="flex md:flex-col gap-3 md:gap-2 min-w-[220px]">
+              <div className="flex-1 px-4 py-3 rounded-2xl bg-white/80 border border-yellow-200 shadow-sm">
+                <p className="text-xs font-semibold text-gray-500">参加中チャレンジ</p>
+                <p className="text-2xl font-black" style={{ color: "#8B4513" }}>
+                  {challenges.length}
+                </p>
+              </div>
+              <div className="flex-1 px-4 py-3 rounded-2xl bg-white/80 border border-yellow-200 shadow-sm">
+                <p className="text-xs font-semibold text-gray-500">未読のお知らせ</p>
+                <p className="text-2xl font-black" style={{ color: "#8B4513" }}>
+                  {totalNotifications}
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Survey Due Notification */}
-        <SurveyDueNotification />
-
         {/* Notifications */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {notifications.map((notification, index) => (
-            <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-              <NotificationCard {...notification} />
-            </div>
+            <NotificationCard key={index} {...notification} />
           ))}
         </div>
 
@@ -218,32 +214,16 @@ export default async function DashboardPage() {
           {/* Left Column - Challenges */}
           <div className="lg:col-span-2 space-y-6">
             {challenges.map((challenge, index) => (
-              <div key={index}>
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xl font-bold text-gray-900">選択したチャレンジ</h2>
-                  <Link href="/challenges" className="text-sm text-primary hover:text-primary-dark font-medium">
-                    他のチャレンジを見る →
-                  </Link>
-                </div>
-                <ChallengeSection {...challenge} />
-              </div>
+              <ChallengeSection key={index} {...challenge} />
             ))}
           </div>
 
           {/* Right Column - Widgets */}
           <div className="space-y-6">
-            <div className="animate-slide-up">
-              <SupplementWidget supplement={recommendedSupplement} />
-            </div>
-            <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
-              <BadgesWidget badges={badges} />
-            </div>
-            <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              <RankingWidget {...rankingData} />
-            </div>
-            <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
-              <SupplementTimer schedules={supplementSchedules} />
-            </div>
+            <SupplementWidget supplement={recommendedSupplement} />
+            <BadgesWidget badges={badges} />
+            <RankingWidget {...rankingData} />
+            <SupplementTimer schedules={supplementSchedules} />
           </div>
         </div>
       </div>

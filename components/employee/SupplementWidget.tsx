@@ -14,13 +14,13 @@ interface SupplementWidgetProps {
 
 export function SupplementWidget({ supplement }: SupplementWidgetProps) {
   return (
-    <Card className="bg-gradient-to-br from-primary-light via-primary-lighter to-white border-primary/20 shadow-medium">
+    <Card className="bg-white shadow-sm border border-gray-200">
       <CardContent className="p-6">
         <div className="flex flex-col items-center text-center">
           {/* Supplement Image Placeholder */}
-          <div className="w-32 h-40 bg-white rounded-xl flex items-center justify-center shadow-soft border-2 border-primary/10 mb-4">
+          <div className="w-32 h-40 bg-gray-100 rounded-xl flex items-center justify-center border border-gray-200 mb-4">
             <div className="text-center">
-              <div className="w-20 h-20 mx-auto mb-2 bg-primary-light rounded-lg flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto mb-2 bg-white rounded-lg flex items-center justify-center border border-gray-200">
                 <span className="text-3xl">💊</span>
               </div>
             </div>

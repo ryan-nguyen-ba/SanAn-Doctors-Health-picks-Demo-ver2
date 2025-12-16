@@ -12,7 +12,7 @@ interface RankingWidgetProps {
 
 export function RankingWidget({ rank, total, weeklyData }: RankingWidgetProps) {
   return (
-    <Card className="shadow-soft">
+    <Card className="bg-white shadow-sm border border-gray-200">
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
           <CardTitle className="text-lg font-bold text-gray-900">週間取り組みランキング</CardTitle>
@@ -22,7 +22,7 @@ export function RankingWidget({ rank, total, weeklyData }: RankingWidgetProps) {
         </div>
       </CardHeader>
       <CardContent className="pt-0">
-        <div className="mb-5">
+        <div className="mb-5 p-3 bg-gray-50 rounded-xl border border-gray-200">
           <p className="text-2xl font-bold text-center text-gray-900 mb-1">
             {rank}/{total}位
           </p>
@@ -40,10 +40,16 @@ export function RankingWidget({ rank, total, weeklyData }: RankingWidgetProps) {
             />
             <Bar 
               dataKey="percentage" 
-              fill="#FFD700"
+              fill="url(#colorGradient)"
               radius={[8, 8, 0, 0]}
               className="hover:opacity-80 transition-opacity"
             />
+            <defs>
+              <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#FFD700" />
+                <stop offset="100%" stopColor="#FFA500" />
+              </linearGradient>
+            </defs>
           </BarChart>
         </ResponsiveContainer>
       </CardContent>

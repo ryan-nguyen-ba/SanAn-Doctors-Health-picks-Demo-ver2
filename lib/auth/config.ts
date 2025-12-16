@@ -1,7 +1,30 @@
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { prisma } from "@/lib/db/prisma";
-import bcrypt from "bcryptjs";
+
+// Mock users for frontend demo (no database needed)
+const mockUsers = [
+  {
+    id: "1",
+    email: "admin@example.com",
+    password: "password123",
+    name: "管理者",
+    role: "ADMIN",
+  },
+  {
+    id: "2",
+    email: "provider@example.com",
+    password: "password123",
+    name: "プロバイダー",
+    role: "PROVIDER",
+  },
+  {
+    id: "3",
+    email: "employee@example.com",
+    password: "password123",
+    name: "従業員",
+    role: "EMPLOYEE",
+  },
+];
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -13,26 +36,21 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
+          console.log("Missing credentials");
           return null;
         }
 
-        const user = await prisma.user.findUnique({
-          where: { email: credentials.email },
-        });
-
-        if (!user) {
-          return null;
-        }
-
-        const isPasswordValid = await bcrypt.compare(
-          credentials.password,
-          user.password
+        // Find user in mock data
+        const user = mockUsers.find(
+          (u) => u.email === credentials.email && u.password === credentials.password
         );
 
-        if (!isPasswordValid) {
+        if (!user) {
+          console.log("User not found:", credentials.email);
           return null;
         }
 
+        console.log("User authorized:", user.email, user.role);
         return {
           id: user.id,
           email: user.email,
@@ -59,7 +77,7 @@ export const authOptions: NextAuthOptions = {
     },
   },
   pages: {
-    signIn: "/auth/signin",
+    signIn: "/signin",
   },
   session: {
     strategy: "jwt",
