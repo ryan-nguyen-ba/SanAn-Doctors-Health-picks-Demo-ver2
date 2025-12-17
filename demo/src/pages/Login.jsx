@@ -7,12 +7,20 @@ function Login() {
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [rememberEmail, setRememberEmail] = useState(false)
+  const [role, setRole] = useState('employee') // 'provider', 'employee', 'hr'
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Navigate to questionnaire after login
-    navigate('/questionnaire')
+    // Navigate based on selected role
+    if (role === 'provider') {
+      navigate('/provider/dashboard')
+    } else if (role === 'hr') {
+      navigate('/hr/dashboard')
+    } else {
+      // Employee - navigate to questionnaire
+      navigate('/questionnaire')
+    }
   }
 
   return (
@@ -56,6 +64,47 @@ function Login() {
                 onClick={() => setShowPassword(!showPassword)}
                 style={{ cursor: 'pointer' }}
               />
+            </div>
+          </div>
+
+          <div className="login-form__group">
+            <label className="login-form__label" style={{ marginBottom: '12px', display: 'block', fontWeight: 'bold', fontSize: '14px' }}>
+              ログインタイプ
+            </label>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '12px', backgroundColor: '#f9f9f9', borderRadius: '6px' }}>
+              <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', padding: '8px', borderRadius: '4px', transition: 'background-color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f0f0f0'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>
+                <input
+                  type="radio"
+                  name="role"
+                  value="employee"
+                  checked={role === 'employee'}
+                  onChange={(e) => setRole(e.target.value)}
+                  style={{ marginRight: '10px', width: '18px', height: '18px', cursor: 'pointer' }}
+                />
+                <span style={{ fontSize: '14px', color: '#333' }}>従業員</span>
+              </label>
+              <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', padding: '8px', borderRadius: '4px', transition: 'background-color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f0f0f0'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>
+                <input
+                  type="radio"
+                  name="role"
+                  value="provider"
+                  checked={role === 'provider'}
+                  onChange={(e) => setRole(e.target.value)}
+                  style={{ marginRight: '10px', width: '18px', height: '18px', cursor: 'pointer' }}
+                />
+                <span style={{ fontSize: '14px', color: '#333' }}>提供者側</span>
+              </label>
+              <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', padding: '8px', borderRadius: '4px', transition: 'background-color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f0f0f0'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>
+                <input
+                  type="radio"
+                  name="role"
+                  value="hr"
+                  checked={role === 'hr'}
+                  onChange={(e) => setRole(e.target.value)}
+                  style={{ marginRight: '10px', width: '18px', height: '18px', cursor: 'pointer' }}
+                />
+                <span style={{ fontSize: '14px', color: '#333' }}>人事管理者</span>
+              </label>
             </div>
           </div>
 

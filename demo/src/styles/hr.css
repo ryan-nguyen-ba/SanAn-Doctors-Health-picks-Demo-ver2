@@ -1,0 +1,138 @@
+/* HR Portal Styles */
+/* Reusing common styles from Employee Portal */
+
+.hr-dashboard {
+  padding: 20px;
+}
+
+.hr-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.hr-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hr-table th,
+.hr-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.hr-table th {
+  font-weight: bold;
+  background-color: #f9f9f9;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.hr-button {
+  padding: 10px 20px;
+  background-color: #FFCC00;
+  color: #5C3D16;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.hr-button:hover {
+  background-color: #ffd633;
+}
+
+.hr-button-secondary {
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.hr-button-secondary:hover {
+  background-color: #e0e0e0;
+}
+
+.hr-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  display: inline-block;
+}
+
+.hr-badge-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.hr-badge-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.hr-badge-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.hr-badge-info {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.hr-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.hr-filter {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.hr-chart {
+  height: 200px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+}
+
+.hr-metric-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.hr-metric-value {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin: 8px 0;
+}
+
+.hr-metric-label {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.hr-trend {
+  font-size: 12px;
+  color: #4caf50;
+  font-weight: bold;
+}
+

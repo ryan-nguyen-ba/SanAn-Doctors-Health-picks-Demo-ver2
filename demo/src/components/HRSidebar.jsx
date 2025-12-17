@@ -1,16 +1,17 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-function Sidebar({ activeNav = 'home' }) {
+function HRSidebar({ activeNav = 'dashboard' }) {
   const location = useLocation()
 
   const navItems = [
-    { path: '/home', icon: '/images/icon_home.svg', label: 'ホーム', key: 'home' },
-    { path: '/todo', icon: '/images/icon_todo.svg', label: 'やること', key: 'todo' },
-    { path: '/challenge', icon: '/images/icon_challenge.svg', label: 'チャレンジ', key: 'challenge' },
-    { path: '/recipe', icon: '/images/icon_recipe.svg', label: 'レシピ', key: 'recipe' },
-    { path: '/mission', icon: '/images/icon_mission.svg', label: 'ミッション', key: 'mission' },
-    { path: '/supply', icon: '/images/icon_supply.svg', label: 'サプリ', key: 'supply' },
+    { path: '/hr/dashboard', icon: '/images/icon_home.svg', label: 'ダッシュボード', key: 'dashboard' },
+    { path: '/hr/challenges', icon: '/images/icon_challenge.svg', label: 'チャレンジ分析', key: 'challenges' },
+    { path: '/hr/health', icon: '/images/icon_supply.svg', label: '健康分析', key: 'health' },
+    { path: '/hr/notifications', icon: '/images/icon_chat.svg', label: '通知管理', key: 'notifications' },
+    { path: '/hr/users', icon: '/images/icon_todo.svg', label: '利用者管理', key: 'users' },
+    { path: '/hr/subsidy', icon: '/images/home/icon_wallet.svg', label: '社販管理', key: 'subsidy' },
+    { path: '/hr/announcements', icon: '/images/home/icon_bell.svg', label: 'お知らせ配信', key: 'announcements' },
   ]
 
   const isActive = (key) => {
@@ -21,9 +22,9 @@ function Sidebar({ activeNav = 'home' }) {
   return (
     <aside className="sidebar sidebar--left">
       <div className="profile">
-        <img src="/images/pic_avatar.jpg" alt="加藤 佳子" className="profile__avatar" />
-        <h2 className="profile__name">加藤 佳子</h2>
-        <p className="profile__id">社員No: 100128</p>
+        <img src="/images/pic_avatar.jpg" alt="HR Admin" className="profile__avatar" />
+        <h2 className="profile__name">人事管理者</h2>
+        <p className="profile__id">HR Admin ID: HR001</p>
       </div>
 
       <nav className="nav">
@@ -69,5 +70,5 @@ function Sidebar({ activeNav = 'home' }) {
   )
 }
 
-export default Sidebar
+export default HRSidebar
 

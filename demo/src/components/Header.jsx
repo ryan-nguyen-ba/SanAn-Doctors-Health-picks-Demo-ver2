@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Header({ navItems = null }) {
   return (
@@ -15,7 +16,11 @@ function Header({ navItems = null }) {
               key={index} 
               className={item.active ? 'main-header__nav__active' : ''}
             >
-              {item.label}
+              {item.path ? (
+                <Link to={item.path}>{item.label}</Link>
+              ) : (
+                item.label
+              )}
             </span>
           ))}
         </div>

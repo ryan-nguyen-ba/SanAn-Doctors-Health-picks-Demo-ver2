@@ -1,16 +1,20 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-function Sidebar({ activeNav = 'home' }) {
+function ProviderSidebar({ activeNav = 'dashboard' }) {
   const location = useLocation()
 
   const navItems = [
-    { path: '/home', icon: '/images/icon_home.svg', label: 'ホーム', key: 'home' },
-    { path: '/todo', icon: '/images/icon_todo.svg', label: 'やること', key: 'todo' },
-    { path: '/challenge', icon: '/images/icon_challenge.svg', label: 'チャレンジ', key: 'challenge' },
-    { path: '/recipe', icon: '/images/icon_recipe.svg', label: 'レシピ', key: 'recipe' },
-    { path: '/mission', icon: '/images/icon_mission.svg', label: 'ミッション', key: 'mission' },
-    { path: '/supply', icon: '/images/icon_supply.svg', label: 'サプリ', key: 'supply' },
+    { path: '/provider/dashboard', icon: '/images/icon_home.svg', label: 'ダッシュボード', key: 'dashboard' },
+    { path: '/provider/ingredients', icon: '/images/icon_supply.svg', label: '栄養素材', key: 'ingredients' },
+    { path: '/provider/products', icon: '/images/icon_supply.svg', label: '製品管理', key: 'products' },
+    { path: '/provider/challenges', icon: '/images/icon_challenge.svg', label: 'チャレンジ', key: 'challenges' },
+    { path: '/provider/recipes', icon: '/images/icon_recipe.svg', label: 'レシピ', key: 'recipes' },
+    { path: '/provider/missions', icon: '/images/icon_mission.svg', label: 'ミッション', key: 'missions' },
+    { path: '/provider/content', icon: '/images/icon_chat.svg', label: 'コンテンツ配信', key: 'content' },
+    { path: '/provider/tenants', icon: '/images/icon_settings.svg', label: '法人管理', key: 'tenants' },
+    { path: '/provider/employees', icon: '/images/icon_todo.svg', label: '従業員管理', key: 'employees' },
+    { path: '/provider/analytics', icon: '/images/icon_home.svg', label: 'データ集計', key: 'analytics' },
   ]
 
   const isActive = (key) => {
@@ -21,9 +25,9 @@ function Sidebar({ activeNav = 'home' }) {
   return (
     <aside className="sidebar sidebar--left">
       <div className="profile">
-        <img src="/images/pic_avatar.jpg" alt="加藤 佳子" className="profile__avatar" />
-        <h2 className="profile__name">加藤 佳子</h2>
-        <p className="profile__id">社員No: 100128</p>
+        <img src="/images/pic_avatar.jpg" alt="Provider Admin" className="profile__avatar" />
+        <h2 className="profile__name">提供者管理者</h2>
+        <p className="profile__id">Provider ID: PROV001</p>
       </div>
 
       <nav className="nav">
@@ -69,5 +73,5 @@ function Sidebar({ activeNav = 'home' }) {
   )
 }
 
-export default Sidebar
+export default ProviderSidebar
 

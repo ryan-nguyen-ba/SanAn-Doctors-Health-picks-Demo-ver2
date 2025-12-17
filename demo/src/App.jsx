@@ -14,6 +14,27 @@ import TimelineDetail from './pages/TimelineDetail'
 import TimelineTop from './pages/TimelineTop'
 import TimelineServiceCard from './pages/TimelineServiceCard'
 
+// Provider Portal
+import ProviderDashboard from './pages/provider/Dashboard'
+import ProviderIngredients from './pages/provider/Ingredients'
+import ProviderProducts from './pages/provider/Products'
+import ProviderChallenges from './pages/provider/Challenges'
+import ProviderRecipes from './pages/provider/Recipes'
+import ProviderMissions from './pages/provider/Missions'
+import ProviderContent from './pages/provider/Content'
+import ProviderTenants from './pages/provider/Tenants'
+import ProviderEmployees from './pages/provider/Employees'
+import ProviderAnalytics from './pages/provider/Analytics'
+
+// HR Portal
+import HRDashboard from './pages/hr/Dashboard'
+import HRChallenges from './pages/hr/Challenges'
+import HRHealth from './pages/hr/Health'
+import HRNotifications from './pages/hr/Notifications'
+import HRUsers from './pages/hr/Users'
+import HRSubsidy from './pages/hr/Subsidy'
+import HRAnnouncements from './pages/hr/Announcements'
+
 function App() {
   return (
     <Router>
@@ -40,6 +61,28 @@ function App() {
         <Route path="/timeline/detail" element={<TimelineDetail />} />
         <Route path="/timeline/top" element={<TimelineTop />} />
         <Route path="/timeline/service" element={<TimelineServiceCard />} />
+        
+        {/* Provider Portal Routes */}
+        <Route path="/provider/dashboard" element={<ProviderDashboard />} />
+        <Route path="/provider/ingredients" element={<ProviderIngredients />} />
+        <Route path="/provider/products" element={<ProviderProducts />} />
+        <Route path="/provider/challenges" element={<ProviderChallenges />} />
+        <Route path="/provider/recipes" element={<ProviderRecipes />} />
+        <Route path="/provider/missions" element={<ProviderMissions />} />
+        <Route path="/provider/content" element={<ProviderContent />} />
+        <Route path="/provider/tenants" element={<ProviderTenants />} />
+        <Route path="/provider/employees" element={<ProviderEmployees />} />
+        <Route path="/provider/analytics" element={<ProviderAnalytics />} />
+        
+        {/* HR Portal Routes */}
+        <Route path="/hr/dashboard" element={<HRDashboard />} />
+        <Route path="/hr/challenges" element={<HRChallenges />} />
+        <Route path="/hr/health" element={<HRHealth />} />
+        <Route path="/hr/notifications" element={<HRNotifications />} />
+        <Route path="/hr/users" element={<HRUsers />} />
+        <Route path="/hr/subsidy" element={<HRSubsidy />} />
+        <Route path="/hr/announcements" element={<HRAnnouncements />} />
+        
         <Route path="/" element={<Navigate to="/login" replace />} />
       </Routes>
     </Router>
