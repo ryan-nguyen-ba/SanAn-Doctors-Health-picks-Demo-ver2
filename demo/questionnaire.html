@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初回アンケート - Health Picks</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/questionnaire.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="main-header">
+            <div class="main-header__logo__area">
+                <h1 class="main-header__logo"><img src="images/logo.png" alt="Health Picks"></h1>
+            </div>
+            <div class="main-header__nav">
+                <span class="main-header__nav__active">総合</span>
+            </div>
+        </header>
+
+        <aside class="sidebar sidebar--left">
+            <div class="profile">
+                <img src="images/pic_avatar.jpg" alt="加藤 佳子" class="profile__avatar">
+                <h2 class="profile__name">加藤 佳子</h2>
+                <p class="profile__id">社員No: 100128</p>
+            </div>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item nav__item--active">
+                        <a href="home.html" class="nav__link"><img src="images/icon_home.svg" alt="ホーム" class="nav__icon">ホーム</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="todo.html" class="nav__link"><img src="images/icon_todo.svg" alt="やること" class="nav__icon">やること</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="challenge.html" class="nav__link"><img src="images/icon_challenge.svg" alt="チャレンジ" class="nav__icon">チャレンジ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="timeline.html" class="nav__link"><img src="images/icon_recipe.svg" alt="レシピ" class="nav__icon">レシピ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="supply.html" class="nav__link"><img src="images/icon_supply.svg" alt="サプリ" class="nav__icon">サプリ</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__footer">
+                 <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link"><img src="images/icon_settings.svg" alt="設定" class="nav__icon">設定</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link"><img src="images/icon_logout.svg" alt="ログアウト" class="nav__icon">ログアウト</a>
+                    </li>
+                </ul>
+                <div class="support-info">
+                    <p class="support-info__title">サポート窓口</p>
+                    <a href="mailto:support@healthpicks.com" class="support-info__email"><img src="images/icon_support.svg" alt="ログアウト" class="nav__icon">support@healthpicks.com</a>
+                </div>
+            </div>
+        </aside>
+
+        <div class="main-area">
+            <main class="main-content">
+
+                <div class="card questionnaire">
+                    <div class="questionnaire__header">
+                        <span class="questionnaire__title"><img src="images/questionnaire/icon_questionnaire.svg" alt="" class="nav__icon">初回アンケート</span>
+                        <span class="questionnaire__meta">あなたが送信 1時間前</span>
+                        <button class="questionnaire__options"><img src="images/icon_three_dot.svg" alt="" class="nav__icon"></button>
+                    </div>
+                    <div class="questionnaire__banner">
+                        <img src="images/questionnaire/illust_questionnaire.svg" alt="" >
+                    </div>
+                    <div class="questionnaire__body">
+                        <p class="questionnaire__intro">
+                            加藤 佳子 さん<br>
+                            ようこそ、Health Picksへ。<br>
+                            まずはあなたの状態を知るために、体調・睡眠・ストレス・食事に関する質問にお答えください。
+                        </p>
+
+                        <form class="form">
+                            <h3 class="form__title">体調</h3>
+                            <fieldset class="form__group">
+                                <legend class="form__legend">最近、朝起きたときに疲れが残っていると感じることはありますか？</legend>
+                                <div class="form__radio-group">
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="1">ほぼ毎日</label>
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="2" checked>ときどき</label>
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="3" checked>ほとんどない</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form__group">
+                                <legend class="form__legend">ぼんやりしたり、集中力が続かないと感じることがありますか？</legend>
+                                <div class="form__radio-group">
+                                    <label class="form__radio-label"><input type="radio" name="focus" value="1">よくある</label>
+                                    <label class="form__radio-label"><input type="radio" name="focus" value="2" checked>たまにある</label>
+                                    <label class="form__radio-label"><input type="radio" name="focus" value="3" checked>ない</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form__group">
+                                <legend class="form__legend">季節の変わり目に体調を崩しやすいと感じますか？</legend>
+                                <div class="form__radio-group">
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="1">はい</label>
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="2" checked>いいえ</label>
+                                </div>
+                            </fieldset>
+                        </form>
+
+                        <form class="form">
+                            <h3 class="form__title">睡眠</h3>
+                            <fieldset class="form__group">
+                                <legend class="form__legend">最近、夜しっかり眠れていますか？<br>（途中で目が覚める、入眠に時間がかかるなど）</legend>
+                                <div class="form__radio-group">
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="1">よく眠れている</label>
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="2" checked>あまり眠れていない</label>
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="3" checked>眠れないことが多い</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form__group">
+                                <legend class="form__legend">起床時にスッキリ目覚められますか？</legend>
+                                <div class="form__radio-group">
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="1">はい</label>
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="2" checked>まあまあ</label>
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="3" checked>ぐったりしている</label>
+                                </div>
+                            </fieldset>
+                        </form>
+
+                        <form class="form">
+                            <h3 class="form__title">ストレス</h3>
+                            <fieldset class="form__group">
+                                <legend class="form__legend">日常生活の中でイライラや緊張を感じやすいですか？</legend>
+                                <div class="form__radio-group">
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="1">ほぼ毎日</label>
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="2" checked>週に数回</label>
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="3" checked>ほとんどない</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form__group">
+                                <legend class="form__legend">気分が落ち込む、理由もなく不安になることはありますか？</legend>
+                                <div class="form__radio-group">
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="1">よくある</label>
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="2" checked>たまにある</label>
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="3" checked>ない</label>
+                                </div>
+                            </fieldset>
+                        </form>
+
+                        <form class="form">
+                            <h3 class="form__title">食事</h3>
+                            <fieldset class="form__group">
+                                <legend class="form__legend">１週間にどれくらい外食またはコンビニ食をとっていますか？</legend>
+                                <div class="form__radio-group">
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="1">週5回以上</label>
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="2" checked>週2〜4回</label>
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="3" checked>週1回以下</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form__group">
+                                <legend class="form__legend">食後に「もたれ」や「胃の重さ」を感じることはありますか？</legend>
+                                <div class="form__radio-group">
+                                    <label class="form__radio-label"><input type="radio" name="focus" value="1">よくある</label>
+                                    <label class="form__radio-label"><input type="radio" name="focus" value="2" checked>時々ある</label>
+                                    <label class="form__radio-label"><input type="radio" name="focus" value="3" checked>ほとんどない</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form__group">
+                                <legend class="form__legend">朝食をとる習慣はありますか？</legend>
+                                <div class="form__radio-group">
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="1">毎日食べる</label>
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="2" checked>時々食べる</label>
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="3" checked>食べない</label>
+                                </div>
+                            </fieldset>
+                        </form>
+
+                        <form class="form">
+                            <h3 class="form__title">運動</h3>
+                            <fieldset class="form__group">
+                                <legend class="form__legend">週にどのくらい体を動かしていますか？<br>（ウォーキング・筋トレなど）</legend>
+                                <div class="form__radio-group">
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="1">週3回以上</label>
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="2" checked>週1〜2回</label>
+                                    <label class="form__radio-label"><input type="radio" name="condition" value="3" checked>ほとんどしない</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form__group">
+                                <legend class="form__legend">１日の中で３０分以上歩くことが多いですか？</legend>
+                                <div class="form__radio-group">
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="1">はい</label>
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="2" checked>時々</label>
+                                    <label class="form__radio-label"><input type="radio" name="sleep" value="3" checked>ほとんど</label>
+                                </div>
+                            </fieldset>
+                        </form>
+
+                        <form class="form form__last">
+                            <div class="form__actions">
+                                <button type="button" class="btn btn--primary open-modal-button">入力内容の確認</button>
+                                <button type="button" class="btn btn--secondary">キャンセル</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <aside class="sidebar sidebar--right">
+            <div class="card team-card">
+                <div class="team-card__avatars">
+                    <img src="images/pic_team_avatar_01.jpg" alt="Team member 1" class="team-card__avatar">
+                    <img src="images/pic_team_avatar_02.jpg" alt="Team member 2" class="team-card__avatar">
+                </div>
+                <p class="team-card__title">
+                    <a href="">マイ管理栄養士チーム</a>
+                    <img src="images/icon_arrow_white.svg" alt="" class="nav__icon">
+                </p>
+            </div>
+            <div class="actions">
+                <button class="action-btn" onclick="location.href='URL'">
+                    <img src="images/icon_chat.svg" alt="" class="nav__icon">
+                    <span class="action-btn__text">チャット</span>
+                </button>
+                <button class="action-btn" onclick="location.href='URL'">
+                    <img src="images/icon_request.svg" alt="" class="nav__icon">
+                    <span class="action-btn__text">リクエスト</span>
+                </button>
+            </div>
+        </aside>
+    </div>
+
+    <div class="modal modal--hidden">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <button class="modal__close-button">&times;</button>
+            <h2 class="modal__title">ご回答ありがとうございます。チャレンジカードが発行されました。</h2>
+            <p class="modal__subtitle">気になるチャレンジをひとつ選んでください。</p>
+            <p class="modal__note">※後ほど選び直しもできます。</p>
+
+            <div class="modal__cards-container">
+                <div class="challenge-card">
+                    <img src="images/questionnaire/pic_modal_01.jpg" alt="" class="challenge-card__image">
+                    <div class="challenge-card__body">
+                        <h3 class="challenge-card__title">睡眠の質 改善チャレンジ</h3>
+                        <p class="challenge-card__level">チャレンジレベル <span class="challenge-card__level__star">★★★★☆</span></p>
+                        <p class="challenge-card__description">質の高い睡眠は、心身の健康に不可欠です。日中の疲労回復はもちろん、ストレス軽減、免疫力向上、記憶の定着を促します。結果的に集中力や判断力が高まり、仕事や学習の効率を向上させ、生活全体の質を高めるための重要な鍵となります。</p>
+                        <div class="challenge-card__achievement">
+                            <label class="challenge-card__toggle"><input type="checkbox"/></label>
+                            <p>このチャレンジを選ぶ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge-card">
+                    <img src="images/questionnaire/pic_modal_02.jpg" alt="" class="challenge-card__image">
+                    <div class="challenge-card__body">
+                        <h3 class="challenge-card__title">疲労 改善チャレンジ</h3>
+                        <p class="challenge-card__level">チャレンジレベル <span class="challenge-card__level__star">★★☆☆☆</span></p>
+                        <p class="challenge-card__description">体の疲労改善は、日々の活力を保ち最高の能力を発揮するために不可欠です。疲労の蓄積は、集中力や免疫力の低下、さらには怪我のリスクを高めます。放置すれば慢性疲労に繋がりかねません。心身の健康と生活の質を守るため、こまめなケアが重要です。</p>
+                        <div class="challenge-card__achievement">
+                            <label class="challenge-card__toggle"><input type="checkbox"/></label>
+                            <p>このチャレンジを選ぶ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge-card">
+                    <img src="images/questionnaire/pic_modal_03.jpg" alt="" class="challenge-card__image">
+                    <div class="challenge-card__body">
+                        <h3 class="challenge-card__title">カラダの代謝 改善チャレンジ</h3>
+                        <p class="challenge-card__level">チャレンジレベル <span class="challenge-card__level__star">★★★★★</span></p>
+                        <p class="challenge-card__description">代謝を改善しエネルギー消費を高めることは、太りにくく痩せやすい体を作る基本です。血行が促進され、冷えやむくみ、肩こりを解消。老廃物の排出も促され、肌の健康や疲労回復にも繋がります。健康的な毎日を送る上で非常に重要です。</p>
+                        <div class="challenge-card__achievement">
+                            <label class="challenge-card__toggle"><input type="checkbox"/></label>
+                            <p>このチャレンジを選ぶ</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="challenge-card">
+                    <img src="images/questionnaire/pic_modal_04.jpg" alt="" class="challenge-card__image">
+                    <div class="challenge-card__body">
+                        <h3 class="challenge-card__title">腸内環境 改善チャレンジ</h3>
+                        <p class="challenge-card__level">チャレンジレベル <span class="challenge-card__level__star">★★★☆☆</span></p>
+                        <p class="challenge-card__description">便通改善は、お腹の不快感を解消するだけではありません。腸内環境を整えることで、老廃物や有害物質の排出を促進し、肌荒れの改善に繋がります。また、栄養の吸収を助けて免疫力を高めるなど、心身全体の健康を支えるための重要な生活習慣です。</p>
+                        <div class="challenge-card__achievement">
+                            <label class="challenge-card__toggle"><input type="checkbox"/></label>
+                            <p>このチャレンジを選ぶ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="challenge-card__button challenge-card__button__start" onclick="location.href='home.html'">選んだチャレンジでスタートする</button>
+        </div>
+    </div>
+    <script src="js/questionnaire.js"></script>
+
+</body>
+</html>

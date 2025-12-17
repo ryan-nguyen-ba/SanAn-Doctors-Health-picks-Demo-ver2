@@ -1,0 +1,344 @@
+/* --- 基本設定 --- */
+:root {
+    --primary-color: #ffc107;
+    --text-color: #343a40;
+    --border-color: #e9ecef;
+    --light-gray: #f8f9fa;
+    --gray: #6c757d;
+}
+
+.main-header {
+    height: 66px;
+}
+.main-area {
+    padding: 90px 20px 20px;
+}
+.sidebar--right {
+    padding: 90px 24px 24px;
+}
+
+/* --- Block: main-content (中央) --- */
+.main-content {
+    width: 100%;
+    max-width: 700px;
+}
+.content-section {
+    margin-bottom: 40px;
+}
+.content-section__header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 15px;
+}
+.content-section__title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #87581E;
+}
+.category-title {
+    font-size: 16px; 
+    font-weight: bold;
+    color: #87581E;
+    margin-bottom: 15px; 
+}
+.filter-button {
+    background-color: var(--light-gray);
+    border: 1px solid #5A2F94;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.filter-button__text {
+    padding: 6px 10px;
+    display: inline-block;
+}
+.filter-button__icon {
+    font-size: 18px;
+    color: #5A2F94;
+    padding: 6px 10px;
+    border-left: 1px solid #5A2F94;
+    display: inline-block;
+}
+
+/* --- Block: mission-grid --- */
+.mission-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr); /* 3列のグリッド */
+}
+.mission-grid--horizontal {
+    margin-top: 20px;
+}
+
+
+/* --- mission-card__details --- */
+.mission-card__details {
+    border: 6px solid var(--primary-color);
+    border-radius: 12px;
+    background-color: #fff;
+}
+.mission-card__details .mission-card__image {
+    width: 100%;
+}
+.mission-card__details .mission-card__subtitle {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.mission-card__details .mission-card__description {
+    margin-bottom: 0;
+    padding: 10px;
+    font-size: 13px; 
+    line-height: 1.6; 
+    color: var(--gray); 
+}
+.mission-card__achievement {
+    font-size: 12px;
+    padding: 10px;
+    background-color: #ECEFF1;
+    display: flex; 
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 0 0 5px 5px;
+}
+.mission-card__achievement p {
+    padding-right: 10px;
+}
+
+/* --- トグルボタン --- */
+.mission-card__toggle {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 15px;
+    border-radius: 50px;
+    background-color: #dddddd;
+    cursor: pointer;
+    transition: background-color .4s;
+}
+
+.mission-card__toggle:has(:checked) {
+    background-color: #f09131;
+}
+
+.mission-card__toggle::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    background-color: #fff;
+    content: '';
+    transition: left .4s;
+}
+
+.mission-card__toggle:has(:checked)::after {
+    left: 15px;
+}
+
+.mission-card__toggle input {
+    display: none;
+}
+
+
+/* --- Block: widget (右サイドバー) --- */
+.widget {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.widget__header { 
+    font-size: 13px; 
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 10px;
+    background-color: #F09131;
+    border-radius: 12px 12px 0 0;
+    margin-bottom: 10px;
+}
+.widget__title { font-size: 14px; font-weight: bold; }
+.widget__link { font-size: 12px; color: #fff; }
+
+/* --- Block: widget-list --- */
+.widget-list__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+.widget-list__item:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+.widget-list__image {
+    width: 60px; 
+    height: 60px;
+    object-fit: contain;
+    border-radius: 10px;
+    padding: 4px;
+}
+.widget-list__name {font-size: 13px; line-height: 1.4; }
+.widget-list__company { color: var(--gray); font-size: 12px; margin-top: 4px; }
+
+.widget__calendar {
+    padding-bottom: 10px;
+}
+
+.widget-list__meta { color: var(--gray); font-size: 12px; margin-top: 4px; }
+
+.open-modal-button-mission {
+    cursor: pointer;
+}
+
+/* --- ミッションモーダル --- */
+.mission-modal--hidden {
+    display: none;
+}
+
+.mission-modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.mission-modal__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px 0;
+    border-radius: 16px;
+    z-index: 20;
+    width: 90%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.mission-modal__close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #F09131;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mission-modal__title {
+    font-size: 22px;
+    margin: 0 0 15px 0;
+}
+
+.mission-modal__image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* --- mission-card__details --- */
+.mission-card__details {
+    border: 6px solid #ffc107;
+    border-radius: 12px;
+    background-color: #fff;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.mission-card__details .mission-card__image {
+    width: 100%;
+}
+.mission-card__details .mission-card__subtitle {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.mission-card__details .mission-card__description {
+    margin-bottom: 0;
+    padding: 10px;
+    font-size: 13px; 
+    line-height: 1.6; 
+    color: var(--gray); 
+}
+
+.mission-modal__description {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 20px 30px;
+    text-align: left;
+}
+
+.mission-modal__button {
+    background-color: #F09131;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* --- 区切り線 --- */
+.mission-separator {
+    background-color: #F2F0E7;
+    padding: 15px 30px;
+}
+
+.mission-separator__text {
+    color: #877676;
+}
+
+/* --- ミッションリスト --- */
+.mission-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.mission-list__item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.mission-list__icon {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #FFCC00;
+    background-color: #FFCC00;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.mission-list__text {
+    flex-grow: 1;
+    font-size: 15px;
+}
+
+.mission-list__action {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}

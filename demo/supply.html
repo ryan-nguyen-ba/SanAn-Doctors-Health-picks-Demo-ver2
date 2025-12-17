@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイサプリ - Health Picks</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/supply.css">
+</head>
+<body>
+    <div class="container">
+
+        <header class="main-header">
+            <div class="main-header__logo__area">
+                <h1 class="main-header__logo"><img src="images/logo.png" alt="Health Picks"></h1>
+            </div>
+        </header>
+
+        <aside class="sidebar sidebar--left">
+            <div class="profile">
+                <img src="images/pic_avatar.jpg" alt="加藤 佳子" class="profile__avatar">
+                <h2 class="profile__name">加藤 佳子</h2>
+                <p class="profile__id">社員No: 100128</p>
+            </div>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="home.html" class="nav__link"><img src="images/icon_home.svg" alt="ホーム" class="nav__icon">ホーム</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="todo.html" class="nav__link"><img src="images/icon_todo.svg" alt="やること" class="nav__icon">やること</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="challenge.html" class="nav__link"><img src="images/icon_challenge.svg" alt="チャレンジ" class="nav__icon">チャレンジ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="timeline.html" class="nav__link"><img src="images/icon_recipe.svg" alt="レシピ" class="nav__icon">レシピ</a>
+                    </li>
+                    <li class="nav__item nav__item--active">
+                        <a href="supply.html" class="nav__link"><img src="images/icon_supply.svg" alt="サプリ" class="nav__icon">サプリ</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__footer">
+                 <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link"><img src="images/icon_settings.svg" alt="設定" class="nav__icon">設定</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link"><img src="images/icon_logout.svg" alt="ログアウト" class="nav__icon">ログアウト</a>
+                    </li>
+                </ul>
+                <div class="support-info">
+                    <p class="support-info__title">サポート窓口</p>
+                    <a href="mailto:support@healthpicks.com" class="support-info__email"><img src="images/icon_support.svg" alt="ログアウト" class="nav__icon">support@healthpicks.com</a>
+                </div>
+            </div>
+        </aside>
+   
+
+        <div class="main-area">
+            <main class="main-content">
+
+                <div class="content-section-wrapper">
+                    <section class="content-section">
+                        <div class="supplement-card">
+                            <h2 class="content-section__title">摂取中のサプリ</h2>
+                            <header class="supplement-card__header">
+                                <div class="supplement-card__body">
+                                    <a href="#"><img src="images/supply/pic_supply_01.jpg" class="supplement-card__image" alt=""></a>
+                                    <div class="supplement-timer">
+                                        <img src="images/supply/img_supply_timer_01.svg" class="supplement-card__image" alt="">
+                                        <!--
+                                        <div class="supplement-timer__info">
+                                            <h4 class="supplement-timer__title">サプリタイマー</h4>
+                                            <p class="supplement-timer__time">毎日 22時40分</p>
+                                        </div>
+                                        <div class="supplement-timer__details">GABA錠剤</div>
+                                        -->
+                                    </div>
+                                </div>
+                                <div class="supplement-card__info">
+                                    <h3 class="supplement-card__title">GABA受容体作動サプリ<br><span>COZY GABA</span><small>(30日分)</small></h3>
+                                    <p class="supplement-card__company">ABCサプリ株式会社</p>
+                                    <p class="supplement-card__purchase-info">前回購入: 2025年8月1日<br>そろそろ購入の時期です</p>
+                                    <button class="supplement-card__button supplement-card__button--primary">購入する</button>
+                                    <div class="check-list">
+                                        <div class="check-list__item">
+                                            <span class="check-list__label">定期副作用チェック</span>
+                                            <span class="check-list__date">2025年8月26日</span>
+                                            <a href="#" class="check-list__link">これまでの記録 ></a>
+                                        </div>
+                                        <div class="check-list__item check-list__item--sub">
+                                            <span class="check-list__label">効果を感じている</span>
+                                            <span class="check-list__value">はい</span>
+                                        </div>
+                                        <div class="check-list__item check-list__item--sub">
+                                            <span class="check-list__label">これからも服用を続ける</span>
+                                            <span class="check-list__value">はい</span>
+                                        </div>
+                                    </div>
+                                    <div class="check-list">
+                                        <div class="check-list__item">
+                                            <span class="check-list__label">定期副作用チェック</span>
+                                            <span class="check-list__date">2025年8月26日</span>
+                                            <a href="#" class="check-list__link">これまでの記録 ></a>
+                                        </div>
+                                        <div class="check-list__item check-list__item--sub">
+                                            <span class="check-list__label">効果を感じている</span>
+                                            <span class="check-list__value">はい</span>
+                                        </div>
+                                        <div class="check-list__item check-list__item--sub">
+                                            <span class="check-list__label">これからも服用を続ける</span>
+                                            <span class="check-list__value">はい</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                    </section>
+
+                    <section class="content-section">
+                        <div class="supplement-card">
+                            <h2 class="content-section__title">摂取中のサプリ</h2>
+                            <header class="supplement-card__header">
+                                <div class="supplement-card__body">
+                                    <a href="#"><img src="images/supply/pic_supply_02.jpg" class="supplement-card__image" alt=""></a>
+                                    <div class="supplement-timer">
+                                        <img src="images/supply/img_supply_timer_02.svg" class="supplement-card__image" alt="">
+                                        <!--
+                                        <div class="supplement-timer__info">
+                                            <h4 class="supplement-timer__title">サプリタイマー</h4>
+                                            <p class="supplement-timer__time">毎日 22時40分</p>
+                                        </div>
+                                        <div class="supplement-timer__details">GABA錠剤</div>
+                                        -->
+                                    </div>
+                                </div>
+                                <div class="supplement-card__info">
+                                    <h3 class="supplement-card__title">メラトニン受容体作動薬<br><span>メラトニオン</span></h3>
+                                    <p class="supplement-card__company">大門クリニック</p>
+                                    <p class="supplement-card__purchase-info">前回購入: 2025年8月1日<br>そろそろ薬がなくなる頃です</p>
+                                    <button class="supplement-card__button supplement-card__button--primary">オンライン処方を受ける</button>
+                                    <div class="check-list">
+                                        <div class="check-list__item">
+                                            <span class="check-list__label">定期副作用チェック</span>
+                                            <span class="check-list__date">2025年8月26日</span>
+                                            <a href="#" class="check-list__link">これまでの記録 ></a>
+                                        </div>
+                                        <div class="check-list__item check-list__item--sub">
+                                            <span class="check-list__label">効果を感じている</span>
+                                            <span class="check-list__value">はい</span>
+                                        </div>
+                                        <div class="check-list__item check-list__item--sub">
+                                            <span class="check-list__label">これからも服用を続ける</span>
+                                            <span class="check-list__value">はい</span>
+                                        </div>
+                                    </div>
+                                    <div class="check-list">
+                                        <div class="check-list__item">
+                                            <span class="check-list__label">定期副作用チェック</span>
+                                            <span class="check-list__date">2025年8月26日</span>
+                                            <a href="#" class="check-list__link">これまでの記録 ></a>
+                                        </div>
+                                        <div class="check-list__item check-list__item--sub">
+                                            <span class="check-list__label">効果を感じている</span>
+                                            <span class="check-list__value">はい</span>
+                                        </div>
+                                        <div class="check-list__item check-list__item--sub">
+                                            <span class="check-list__label">これからも服用を続ける</span>
+                                            <span class="check-list__value">はい</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="supplement-list">
+                    <h3 class="supplement-list__title">この栄養素をサプリで補う</h3>
+                    <div class="supplement-list__thumbnails">
+                        <div class="supplement-thumb">
+                            <div class="supplement-thumb__image"><img src="images/timeline/modal_img_02.jpg" alt=""></div>
+                            <p class="supplement-thumb__title">目覚めをサポート</p>
+                            <p class="supplement-thumb__name">COZY GABA</p>
+                            <p class="supplement-thumb__company">ABCサプリ株式会社</p>
+                            <button class="supplement-thumb__button" onclick="location.href='supply.html'">マイサプリに加える</button>
+                            <button class="supplement-thumb__button">購入する</button>
+                        </div>
+                        <div class="supplement-thumb">
+                            <div class="supplement-thumb__image"><img src="images/timeline/modal_img_03.jpg" alt=""></div>
+                            <p class="supplement-thumb__title">疲れを残さない</p>
+                            <p class="supplement-thumb__name">GABAトレール</p>
+                            <p class="supplement-thumb__company">株式会社DEFサプリ</p>
+                            <button class="supplement-thumb__button" onclick="location.href='supply.html'">マイサプリに加える</button>
+                            <button class="supplement-thumb__button">購入する</button>
+                        </div>
+                        <div class="supplement-thumb">
+                            <div class="supplement-thumb__image"><img src="images/timeline/modal_img_02.jpg" alt=""></div>
+                            <p class="supplement-thumb__title">目覚めをサポート</p>
+                            <p class="supplement-thumb__name">COZY GABA</p>
+                            <p class="supplement-thumb__company">ABCサプリ株式会社</p>
+                            <button class="supplement-thumb__button" onclick="location.href='supply.html'">マイサプリに加える</button>
+                            <button class="supplement-thumb__button">購入する</button>
+                        </div>
+                        <div class="supplement-thumb">
+                            <div class="supplement-thumb__image"><img src="images/timeline/modal_img_03.jpg" alt=""></div>
+                            <p class="supplement-thumb__title">疲れを残さない</p>
+                            <p class="supplement-thumb__name">GABAトレール</p>
+                            <p class="supplement-thumb__company">株式会社DEFサプリ</p>
+                            <button class="supplement-thumb__button" onclick="location.href='supply.html'">マイサプリに加える</button>
+                            <button class="supplement-thumb__button">購入する</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="supplement-list">
+                    <div class="supplement-list__thumbnails">
+                        <div class="supplement-thumb">
+                            <div class="supplement-thumb__image"><img src="images/timeline/modal_img_02.jpg" alt=""></div>
+                            <p class="supplement-thumb__title">目覚めをサポート</p>
+                            <p class="supplement-thumb__name">COZY GABA</p>
+                            <p class="supplement-thumb__company">ABCサプリ株式会社</p>
+                            <button class="supplement-thumb__button" onclick="location.href='supply.html'">マイサプリに加える</button>
+                            <button class="supplement-thumb__button">購入する</button>
+                        </div>
+                        <div class="supplement-thumb">
+                            <div class="supplement-thumb__image"><img src="images/timeline/modal_img_03.jpg" alt=""></div>
+                            <p class="supplement-thumb__title">疲れを残さない</p>
+                            <p class="supplement-thumb__name">GABAトレール</p>
+                            <p class="supplement-thumb__company">株式会社DEFサプリ</p>
+                            <button class="supplement-thumb__button" onclick="location.href='supply.html'">マイサプリに加える</button>
+                            <button class="supplement-thumb__button">購入する</button>
+                        </div>
+                        <div class="supplement-thumb">
+                            <div class="supplement-thumb__image"><img src="images/timeline/modal_img_02.jpg" alt=""></div>
+                            <p class="supplement-thumb__title">目覚めをサポート</p>
+                            <p class="supplement-thumb__name">COZY GABA</p>
+                            <p class="supplement-thumb__company">ABCサプリ株式会社</p>
+                            <button class="supplement-thumb__button" onclick="location.href='supply.html'">マイサプリに加える</button>
+                            <button class="supplement-thumb__button">購入する</button>
+                        </div>
+                        <div class="supplement-thumb">
+                            <div class="supplement-thumb__image"><img src="images/timeline/modal_img_03.jpg" alt=""></div>
+                            <p class="supplement-thumb__title">疲れを残さない</p>
+                            <p class="supplement-thumb__name">GABAトレール</p>
+                            <p class="supplement-thumb__company">株式会社DEFサプリ</p>
+                            <button class="supplement-thumb__button" onclick="location.href='supply.html'">マイサプリに加える</button>
+                            <button class="supplement-thumb__button">購入する</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="supplement-list">
+                    <div class="supplement-list__thumbnails">
+                        <div class="supplement-thumb">
+                            <div class="supplement-thumb__image"><img src="images/timeline/modal_img_02.jpg" alt=""></div>
+                            <p class="supplement-thumb__title">目覚めをサポート</p>
+                            <p class="supplement-thumb__name">COZY GABA</p>
+                            <p class="supplement-thumb__company">ABCサプリ株式会社</p>
+                            <button class="supplement-thumb__button" onclick="location.href='supply.html'">マイサプリに加える</button>
+                            <button class="supplement-thumb__button">購入する</button>
+                        </div>
+                        <div class="supplement-thumb">
+                            <div class="supplement-thumb__image"><img src="images/timeline/modal_img_03.jpg" alt=""></div>
+                            <p class="supplement-thumb__title">疲れを残さない</p>
+                            <p class="supplement-thumb__name">GABAトレール</p>
+                            <p class="supplement-thumb__company">株式会社DEFサプリ</p>
+                            <button class="supplement-thumb__button" onclick="location.href='supply.html'">マイサプリに加える</button>
+                            <button class="supplement-thumb__button">購入する</button>
+                        </div>
+                        <div class="supplement-thumb">
+                            <div class="supplement-thumb__image"><img src="images/timeline/modal_img_02.jpg" alt=""></div>
+                            <p class="supplement-thumb__title">目覚めをサポート</p>
+                            <p class="supplement-thumb__name">COZY GABA</p>
+                            <p class="supplement-thumb__company">ABCサプリ株式会社</p>
+                            <button class="supplement-thumb__button" onclick="location.href='supply.html'">マイサプリに加える</button>
+                            <button class="supplement-thumb__button">購入する</button>
+                        </div>
+                        <div class="supplement-thumb">
+                            <div class="supplement-thumb__image"><img src="images/timeline/modal_img_03.jpg" alt=""></div>
+                            <p class="supplement-thumb__title">疲れを残さない</p>
+                            <p class="supplement-thumb__name">GABAトレール</p>
+                            <p class="supplement-thumb__company">株式会社DEFサプリ</p>
+                            <button class="supplement-thumb__button" onclick="location.href='supply.html'">マイサプリに加える</button>
+                            <button class="supplement-thumb__button">購入する</button>
+                        </div>
+                    </div>
+                </div>    
+
+
+            </main>
+        </div>
+
+        <aside class="sidebar sidebar--right">
+            <div class="widget">
+                <header class="widget__header">
+                    <h4 class="widget__title">服用中のサプリメント</h4>
+                    <a href="#" class="widget__link">もっと見る ></a>
+                </header>
+                <ul class="widget-list">
+                    <li class="widget-list__item">
+                        <img src="images/supply/pic_side_01.jpg" alt="サプリ" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">GABA受容体作動サプリ</p>
+                            <p class="widget-list__company">ABCサプリ株式会社</p>
+                        </div>
+                    </li>
+                     <li class="widget-list__item">
+                        <img src="images/supply/pic_side_02.jpg" alt="サプリ" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">オレキシン受容体拮抗サプリ</p>
+                            <p class="widget-list__company">DEFサプリ株式会社</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <header class="widget__header">
+                    <h4 class="widget__title">服薬中の薬</h4>
+                    <a href="#" class="widget__link">もっと見る ></a>
+                </header>
+                <ul class="widget-list">
+                    <li class="widget-list__item">
+                        <img src="images/supply/pic_side_02.jpg" alt="薬" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">メラトニン受容体作動薬</p>
+                            <p class="widget-list__company">大門クリニック</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+             <div class="widget">
+                <header class="widget__header">
+                    <h4 class="widget__title">お気に入りサプリメント</h4>
+                    <a href="#" class="widget__link">もっと見る ></a>
+                </header>
+                <ul class="widget-list">
+                     <li class="widget-list__item">
+                        <img src="images/supply/pic_side_01.jpg" alt="サプリ" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">明日に疲れを持ち越さない！睡眠サポートサプリメント</p>
+                            <p class="widget-list__company">COサプリ株式会社</p>
+                        </div>
+                    </li>
+                    <li class="widget-list__item">
+                        <img src="images/supply/pic_side_02.jpg" alt="サプリ" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">明日に疲れを持ち越さない！睡眠サポートサプリメント</p>
+                            <p class="widget-list__company">COサプリ株式会社</p>
+                        </div>
+                    </li>
+                    <li class="widget-list__item">
+                        <img src="images/supply/pic_side_01.jpg" alt="サプリ" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">明日に疲れを持ち越さない！睡眠サポートサプリメント</p>
+                            <p class="widget-list__company">COサプリ株式会社</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

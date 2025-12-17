@@ -13,30 +13,97 @@ interface Challenge {
   name: string;
   participants: number;
   status: string;
+  purpose: string;
+  targetConditions: {
+    ageMin?: number;
+    ageMax?: number;
+    gender?: string;
+    questionnaireResults?: string[];
+  };
+  duration: number;
+  isRecommended: boolean;
+  priority: number;
 }
 
 export default function ChallengesPage() {
   const [challenges, setChallenges] = useState<Challenge[]>([
-    { id: 1, name: "睡眠改善チャレンジ", participants: 150, status: "アクティブ" },
-    { id: 2, name: "運動習慣チャレンジ", participants: 200, status: "アクティブ" },
-    { id: 3, name: "食事改善チャレンジ", participants: 180, status: "終了" },
+    { 
+      id: 1, 
+      name: "睡眠改善チャレンジ", 
+      participants: 150, 
+      status: "アクティブ",
+      purpose: "睡眠の質を向上させ、健康的な睡眠習慣を身につける",
+      targetConditions: { ageMin: 20, ageMax: 60, gender: "all" },
+      duration: 30,
+      isRecommended: true,
+      priority: 1
+    },
+    { 
+      id: 2, 
+      name: "運動習慣チャレンジ", 
+      participants: 200, 
+      status: "アクティブ",
+      purpose: "日常的な運動習慣を身につけ、体力を向上させる",
+      targetConditions: { ageMin: 18, ageMax: 70 },
+      duration: 30,
+      isRecommended: true,
+      priority: 2
+    },
+    { 
+      id: 3, 
+      name: "食事改善チャレンジ", 
+      participants: 180, 
+      status: "終了",
+      purpose: "栄養バランスの取れた食事習慣を身につける",
+      targetConditions: {},
+      duration: 21,
+      isRecommended: false,
+      priority: 3
+    },
   ]);
   
   const [showModal, setShowModal] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState<string>("全て");
-  const [formData, setFormData] = useState({ name: "", participants: 0, status: "アクティブ" });
+  const [formData, setFormData] = useState<Omit<Challenge, 'id'>>({ 
+    name: "", 
+    participants: 0, 
+    status: "アクティブ",
+    purpose: "",
+    targetConditions: {},
+    duration: 30,
+    isRecommended: false,
+    priority: 3
+  });
 
   const handleAdd = () => {
     setEditingId(null);
-    setFormData({ name: "", participants: 0, status: "アクティブ" });
+    setFormData({ 
+      name: "", 
+      participants: 0, 
+      status: "アクティブ",
+      purpose: "",
+      targetConditions: {},
+      duration: 30,
+      isRecommended: false,
+      priority: 3
+    });
     setShowModal(true);
   };
 
   const handleEdit = (challenge: Challenge) => {
     setEditingId(challenge.id);
-    setFormData({ name: challenge.name, participants: challenge.participants, status: challenge.status });
+    setFormData({ 
+      name: challenge.name, 
+      participants: challenge.participants, 
+      status: challenge.status,
+      purpose: challenge.purpose,
+      targetConditions: challenge.targetConditions,
+      duration: challenge.duration,
+      isRecommended: challenge.isRecommended,
+      priority: challenge.priority
+    });
     setShowModal(true);
   };
 
@@ -175,6 +242,92 @@ export default function ChallengesPage() {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="例: 睡眠改善チャレンジ"
                   />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-black">目的（改善したい課題）</label>
+                  <textarea
+                    value={formData.purpose}
+                    onChange={(e) => setFormData({ ...formData, purpose: e.target.value })}
+                    placeholder="チャレンジの目的を入力..."
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                    rows={3}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-black">対象条件</label>
+                  <div className="space-y-2 p-4 border border-gray-200 rounded-md">
+                    <div className="flex gap-2">
+                      <Input
+                        type="number"
+                        value={formData.targetConditions.ageMin || ""}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          targetConditions: { ...formData.targetConditions, ageMin: parseInt(e.target.value) || undefined }
+                        })}
+                        placeholder="年齢（最小）"
+                        className="flex-1"
+                      />
+                      <Input
+                        type="number"
+                        value={formData.targetConditions.ageMax || ""}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          targetConditions: { ...formData.targetConditions, ageMax: parseInt(e.target.value) || undefined }
+                        })}
+                        placeholder="年齢（最大）"
+                        className="flex-1"
+                      />
+                    </div>
+                    <div>
+                      <select
+                        value={formData.targetConditions.gender || ""}
+                        onChange={(e) => setFormData({
+                          ...formData,
+                          targetConditions: { ...formData.targetConditions, gender: e.target.value || undefined }
+                        })}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                      >
+                        <option value="">性別（指定なし）</option>
+                        <option value="male">男性</option>
+                        <option value="female">女性</option>
+                        <option value="all">すべて</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-black">実施期間（日数）</label>
+                  <Input
+                    type="number"
+                    value={formData.duration}
+                    onChange={(e) => setFormData({ ...formData, duration: parseInt(e.target.value) || 30 })}
+                    placeholder="30"
+                    min="1"
+                  />
+                </div>
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    id="isRecommended"
+                    checked={formData.isRecommended}
+                    onChange={(e) => setFormData({ ...formData, isRecommended: e.target.checked })}
+                    className="w-4 h-4"
+                  />
+                  <label htmlFor="isRecommended" className="text-sm font-medium text-black">
+                    推奨フラグ
+                  </label>
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-black">優先度（1=高、3=低）</label>
+                  <select
+                    value={formData.priority}
+                    onChange={(e) => setFormData({ ...formData, priority: parseInt(e.target.value) })}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                  >
+                    <option value="1">1 - 高優先度</option>
+                    <option value="2">2 - 中優先度</option>
+                    <option value="3">3 - 低優先度</option>
+                  </select>
                 </div>
                 <div>
                   <label className="block text-sm font-bold mb-2 text-black">参加者数</label>

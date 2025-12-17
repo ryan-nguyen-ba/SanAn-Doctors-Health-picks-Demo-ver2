@@ -1,0 +1,213 @@
+/* --- 基本設定 --- */
+:root {
+    --primary-color: #ffc107;
+    --text-color: #343a40;
+    --border-color: #e9ecef;
+    --light-gray: #f8f9fa;
+    --gray: #6c757d;
+}
+
+
+/* --- Block: article-content --- */
+.article-content {
+    width: 100%;
+    max-width: 700px;
+}
+.article-content__title {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+.article-content__figure {
+    margin: 0 0 24px 0;
+}
+.article-content__figure img {
+    width: 100%;
+}
+.article-content p {
+    line-height: 1.4;
+    margin-bottom: 1.4em;
+}
+.article-content__subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #334949;
+    border-bottom: 2px solid #E0E4E4;
+    padding-bottom: 12px;
+    margin: 40px 0 20px;
+}
+
+/* --- Block: widget --- */
+.widget__title {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color: #F09131;
+    padding: 10px 8px;
+    border-radius: 8px;
+    margin: 0 0 20px 0;
+}
+
+/* --- Block: mission-item --- */
+.mission-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+.mission-item__effect {
+    margin-top: 15px;
+}
+.mission-item__effect-title {
+    font-size: 13px;
+    color: #F09131;
+    margin-bottom: 8px;
+}
+.mission-item__effect-text {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* --- mission-card__details --- */
+.mission-card__details {
+    border: 6px solid var(--primary-color);
+    border-radius: 12px;
+    background-color: #fff;
+}
+.mission-card__details .mission-card__image {
+    width: 100%;
+}
+.mission-card__details .mission-card__subtitle {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.mission-card__details .mission-card__description {
+    margin-bottom: 0;
+    padding: 10px;
+    font-size: 13px; 
+    line-height: 1.6; 
+    color: var(--gray); 
+}
+.mission-card__achievement {
+    font-size: 12px;
+    padding: 10px;
+    background-color: #ECEFF1;
+    display: flex; 
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 0 0 5px 5px;
+}
+.mission-card__achievement p {
+    padding-right: 10px;
+}
+
+/* --- トグルボタン --- */
+.mission-card__toggle {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 15px;
+    border-radius: 50px;
+    background-color: #dddddd;
+    cursor: pointer;
+    transition: background-color .4s;
+}
+
+.mission-card__toggle:has(:checked) {
+    background-color: #f09131;
+}
+
+.mission-card__toggle::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    background-color: #fff;
+    content: '';
+    transition: left .4s;
+}
+
+.mission-card__toggle:has(:checked)::after {
+    left: 15px;
+}
+
+.mission-card__toggle input {
+    display: none;
+}
+
+.article__title-group a {
+    display: flex; 
+    align-items: center;
+    margin-bottom: 20px;
+}
+.article__title-group__inner {
+    flex: 1;
+    padding-left: 10px;
+}
+.article__icon {
+    width: 48px; 
+    height: 48px; 
+    border-radius: 50%;
+}
+.article__title-group__header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 5px;
+}
+.article__title {
+    font-size: 20px; 
+    font-weight: bold;
+    color: #333;
+}
+.article__level {
+    font-size: 13px;
+    color: #A0A0A0; 
+}
+.article__level__star {
+    color: #FFCC00;
+    font-size: 14px;
+}
+
+.team-card {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #FFCC00;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.team-card a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.team-card__avatars {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.team-card__avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.team-card__text {
+    color: #607C9C;
+    font-size: 14px;
+}
+.team-card__title .nav__icon {
+    width: 15px;
+    height: 15px;
+    margin: 0 0 0 70px;
+}
+
+.side-card {
+    margin-bottom: 20px;
+}

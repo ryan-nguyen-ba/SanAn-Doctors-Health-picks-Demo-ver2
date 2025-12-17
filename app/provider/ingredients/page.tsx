@@ -12,29 +12,84 @@ interface Ingredient {
   name: string;
   category: string;
   stock: number;
+  description: string;
+  warnings: string;
+  nutritionInfo: Array<{ name: string; amount: string; unit: string }>;
+  isPublic: boolean;
 }
 
 export default function IngredientsPage() {
   const [ingredients, setIngredients] = useState<Ingredient[]>([
-    { id: 1, name: "ビタミンC", category: "ビタミン", stock: 1000 },
-    { id: 2, name: "GABA", category: "アミノ酸", stock: 500 },
-    { id: 3, name: "マグネシウム", category: "ミネラル", stock: 750 },
+    { 
+      id: 1, 
+      name: "ビタミンC", 
+      category: "ビタミン", 
+      stock: 1000,
+      description: "抗酸化作用を持つ重要なビタミンです。",
+      warnings: "過剰摂取は下痢を引き起こす可能性があります。",
+      nutritionInfo: [{ name: "ビタミンC", amount: "1000", unit: "mg" }],
+      isPublic: true
+    },
+    { 
+      id: 2, 
+      name: "GABA", 
+      category: "アミノ酸", 
+      stock: 500,
+      description: "リラックス効果のあるアミノ酸です。",
+      warnings: "特にありません。",
+      nutritionInfo: [{ name: "GABA", amount: "200", unit: "mg" }],
+      isPublic: true
+    },
+    { 
+      id: 3, 
+      name: "マグネシウム", 
+      category: "ミネラル", 
+      stock: 750,
+      description: "筋肉のリラックスに重要なミネラルです。",
+      warnings: "腎臓疾患のある方は医師に相談してください。",
+      nutritionInfo: [{ name: "マグネシウム", amount: "400", unit: "mg" }],
+      isPublic: true
+    },
   ]);
   
   const [showModal, setShowModal] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [formData, setFormData] = useState({ name: "", category: "", stock: 0 });
+  const [formData, setFormData] = useState<Omit<Ingredient, 'id'>>({
+    name: "",
+    category: "",
+    stock: 0,
+    description: "",
+    warnings: "",
+    nutritionInfo: [],
+    isPublic: true
+  });
 
   const handleAdd = () => {
     setEditingId(null);
-    setFormData({ name: "", category: "", stock: 0 });
+    setFormData({ 
+      name: "", 
+      category: "", 
+      stock: 0,
+      description: "",
+      warnings: "",
+      nutritionInfo: [],
+      isPublic: true
+    });
     setShowModal(true);
   };
 
   const handleEdit = (ingredient: Ingredient) => {
     setEditingId(ingredient.id);
-    setFormData({ name: ingredient.name, category: ingredient.category, stock: ingredient.stock });
+    setFormData({ 
+      name: ingredient.name, 
+      category: ingredient.category, 
+      stock: ingredient.stock,
+      description: ingredient.description,
+      warnings: ingredient.warnings,
+      nutritionInfo: ingredient.nutritionInfo,
+      isPublic: ingredient.isPublic
+    });
     setShowModal(true);
   };
 
@@ -154,6 +209,89 @@ export default function IngredientsPage() {
                   />
                 </div>
                 <div>
+                  <label className="block text-sm font-bold mb-2 text-black">説明文</label>
+                  <textarea
+                    value={formData.description}
+                    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                    placeholder="成分の説明を入力..."
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                    rows={3}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-black">注意事項（副作用等）</label>
+                  <textarea
+                    value={formData.warnings}
+                    onChange={(e) => setFormData({ ...formData, warnings: e.target.value })}
+                    placeholder="副作用や注意事項を入力..."
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                    rows={3}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-black">栄養素情報</label>
+                  <div className="space-y-2 p-4 border border-gray-200 rounded-md">
+                    {formData.nutritionInfo.map((nutrient, index) => (
+                      <div key={index} className="flex gap-2 items-center">
+                        <Input
+                          value={nutrient.name}
+                          onChange={(e) => {
+                            const newInfo = [...formData.nutritionInfo];
+                            newInfo[index].name = e.target.value;
+                            setFormData({ ...formData, nutritionInfo: newInfo });
+                          }}
+                          placeholder="成分名"
+                          className="flex-1"
+                        />
+                        <Input
+                          value={nutrient.amount}
+                          onChange={(e) => {
+                            const newInfo = [...formData.nutritionInfo];
+                            newInfo[index].amount = e.target.value;
+                            setFormData({ ...formData, nutritionInfo: newInfo });
+                          }}
+                          placeholder="量"
+                          className="w-24"
+                        />
+                        <Input
+                          value={nutrient.unit}
+                          onChange={(e) => {
+                            const newInfo = [...formData.nutritionInfo];
+                            newInfo[index].unit = e.target.value;
+                            setFormData({ ...formData, nutritionInfo: newInfo });
+                          }}
+                          placeholder="単位"
+                          className="w-20"
+                        />
+                        <button
+                          onClick={() => {
+                            setFormData({
+                              ...formData,
+                              nutritionInfo: formData.nutritionInfo.filter((_, i) => i !== index)
+                            });
+                          }}
+                          className="text-red-600 hover:text-red-800"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                    ))}
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        setFormData({
+                          ...formData,
+                          nutritionInfo: [...formData.nutritionInfo, { name: "", amount: "", unit: "" }]
+                        });
+                      }}
+                    >
+                      栄養素を追加
+                    </Button>
+                  </div>
+                </div>
+                <div>
                   <label className="block text-sm font-bold mb-2 text-black">在庫 (g)</label>
                   <Input
                     type="number"
@@ -161,6 +299,18 @@ export default function IngredientsPage() {
                     onChange={(e) => setFormData({ ...formData, stock: parseInt(e.target.value) || 0 })}
                     placeholder="1000"
                   />
+                </div>
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    id="isPublic"
+                    checked={formData.isPublic}
+                    onChange={(e) => setFormData({ ...formData, isPublic: e.target.checked })}
+                    className="w-4 h-4"
+                  />
+                  <label htmlFor="isPublic" className="text-sm font-medium text-black">
+                    公開
+                  </label>
                 </div>
                 <div className="flex space-x-3 pt-2">
                   <Button

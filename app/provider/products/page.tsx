@@ -6,36 +6,121 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { X, Edit, Trash2, Search, Package } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
 
 interface Product {
   id: number;
   name: string;
   price: number;
   stock: number;
+  relatedIngredients: string[];
+  efficacy: string;
+  sideEffects: string;
+  purchaseUrl: string;
+  affiliateLink: string;
+  externalApiInfo: string;
 }
 
 export default function ProductsPage() {
+  const ingredients = [
+    { id: "1", name: "ビタミンC" },
+    { id: "2", name: "GABA" },
+    { id: "3", name: "マグネシウム" },
+  ];
+
   const [products, setProducts] = useState<Product[]>([
-    { id: 1, name: "睡眠サポートサプリ", price: 3000, stock: 100 },
-    { id: 2, name: "集中力アップサプリ", price: 3500, stock: 80 },
-    { id: 3, name: "免疫力強化サプリ", price: 4000, stock: 120 },
+    { 
+      id: 1, 
+      name: "睡眠サポートサプリ", 
+      price: 3000, 
+      stock: 100,
+      relatedIngredients: ["2", "3"],
+      efficacy: "睡眠の質向上、リラックス効果",
+      sideEffects: "まれに下痢を起こすことがあります",
+      purchaseUrl: "https://example.com/purchase",
+      affiliateLink: "https://example.com/affiliate",
+      externalApiInfo: ""
+    },
+    { 
+      id: 2, 
+      name: "集中力アップサプリ", 
+      price: 3500, 
+      stock: 80,
+      relatedIngredients: ["1"],
+      efficacy: "集中力と注意力の向上",
+      sideEffects: "特にありません",
+      purchaseUrl: "https://example.com/purchase2",
+      affiliateLink: "",
+      externalApiInfo: ""
+    },
+    { 
+      id: 3, 
+      name: "免疫力強化サプリ", 
+      price: 4000, 
+      stock: 120,
+      relatedIngredients: ["1"],
+      efficacy: "免疫力の向上、抗酸化作用",
+      sideEffects: "特にありません",
+      purchaseUrl: "https://example.com/purchase3",
+      affiliateLink: "",
+      externalApiInfo: ""
+    },
   ]);
   
   const [showModal, setShowModal] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [formData, setFormData] = useState({ name: "", price: 0, stock: 0 });
+  const [formData, setFormData] = useState<Omit<Product, 'id'>>({ 
+    name: "", 
+    price: 0, 
+    stock: 0,
+    relatedIngredients: [],
+    efficacy: "",
+    sideEffects: "",
+    purchaseUrl: "",
+    affiliateLink: "",
+    externalApiInfo: ""
+  });
 
   const handleAdd = () => {
     setEditingId(null);
-    setFormData({ name: "", price: 0, stock: 0 });
+    setFormData({ 
+      name: "", 
+      price: 0, 
+      stock: 0,
+      relatedIngredients: [],
+      efficacy: "",
+      sideEffects: "",
+      purchaseUrl: "",
+      affiliateLink: "",
+      externalApiInfo: ""
+    });
     setShowModal(true);
   };
 
   const handleEdit = (product: Product) => {
     setEditingId(product.id);
-    setFormData({ name: product.name, price: product.price, stock: product.stock });
+    setFormData({ 
+      name: product.name, 
+      price: product.price, 
+      stock: product.stock,
+      relatedIngredients: product.relatedIngredients,
+      efficacy: product.efficacy,
+      sideEffects: product.sideEffects,
+      purchaseUrl: product.purchaseUrl,
+      affiliateLink: product.affiliateLink,
+      externalApiInfo: product.externalApiInfo
+    });
     setShowModal(true);
+  };
+
+  const toggleIngredient = (ingredientId: string) => {
+    setFormData({
+      ...formData,
+      relatedIngredients: formData.relatedIngredients.includes(ingredientId)
+        ? formData.relatedIngredients.filter(id => id !== ingredientId)
+        : [...formData.relatedIngredients, ingredientId]
+    });
   };
 
   const handleDelete = (id: number) => {
@@ -141,7 +226,7 @@ export default function ProductsPage() {
         {/* Modal */}
         {showModal && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <Card className="max-w-md w-full shadow-xl">
+            <Card className="max-w-2xl w-full shadow-xl max-h-[90vh] overflow-y-auto">
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <CardTitle className="font-black text-black">
@@ -159,6 +244,67 @@ export default function ProductsPage() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="例: 睡眠サポートサプリ"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-black">関連栄養素材（複数選択可）</label>
+                  <div className="space-y-2 p-4 border border-gray-200 rounded-md">
+                    {ingredients.map(ingredient => (
+                      <div key={ingredient.id} className="flex items-center space-x-2">
+                        <Checkbox
+                          id={`ingredient-${ingredient.id}`}
+                          checked={formData.relatedIngredients.includes(ingredient.id)}
+                          onCheckedChange={() => toggleIngredient(ingredient.id)}
+                        />
+                        <label htmlFor={`ingredient-${ingredient.id}`} className="text-sm font-medium text-black">
+                          {ingredient.name}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-black">効果・効能説明</label>
+                  <textarea
+                    value={formData.efficacy}
+                    onChange={(e) => setFormData({ ...formData, efficacy: e.target.value })}
+                    placeholder="効果・効能を入力..."
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                    rows={3}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-black">注意点・副作用</label>
+                  <textarea
+                    value={formData.sideEffects}
+                    onChange={(e) => setFormData({ ...formData, sideEffects: e.target.value })}
+                    placeholder="注意点や副作用を入力..."
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                    rows={3}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-black">購入URL（通常）</label>
+                  <Input
+                    value={formData.purchaseUrl}
+                    onChange={(e) => setFormData({ ...formData, purchaseUrl: e.target.value })}
+                    placeholder="https://example.com/purchase"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-black">アフィリエイトリンク</label>
+                  <Input
+                    value={formData.affiliateLink}
+                    onChange={(e) => setFormData({ ...formData, affiliateLink: e.target.value })}
+                    placeholder="https://example.com/affiliate"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2 text-black">外部API情報（必要な場合）</label>
+                  <Input
+                    value={formData.externalApiInfo}
+                    onChange={(e) => setFormData({ ...formData, externalApiInfo: e.target.value })}
+                    placeholder="API情報を入力..."
                   />
                 </div>
                 <div>

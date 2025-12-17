@@ -1,0 +1,214 @@
+/* --- 基本設定 --- */
+:root {
+    --primary-color: #ffc107;
+    --text-color: #343a40;
+    --border-color: #e9ecef;
+    --light-gray: #f8f9fa;
+    --gray: #6c757d;
+    --secondary-color: #6c757d;
+}
+
+.main-header {
+    height: 66px;
+}
+.main-area {
+    padding: 90px 20px 20px;
+}
+.sidebar--right {
+    padding: 90px 24px 24px;
+}
+
+/* --- Block: main-content (中央) --- */
+.main-content {
+    width: 100%;
+    max-width: 750px;
+}
+.content-section-wrapper {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    margin-bottom: 35px;
+}
+.content-section {
+    flex-shrink: 0;
+}
+.content-section__title { 
+    font-size: 16px; 
+    font-weight: bold; 
+    margin-bottom: 12px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    border-radius: 12px 12px 0 0;
+}
+
+/* --- Block: supplement-card --- */
+.supplement-card {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.supplement-card__header {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+.supplement-card__image {
+    width: 100%;
+    object-fit: contain;
+}
+.supplement-card__info { flex-grow: 1; }
+.supplement-card__title { 
+    font-size: 16px;
+    line-height: 1.4; 
+    margin-bottom: 5px;
+}
+.supplement-card__title span {
+    font-size: 25px;
+    font-weight: bold;
+}
+.supplement-card__title small {
+    font-size: 20px;
+    font-weight: bold;
+}
+.supplement-card__company { font-size: 13px; color: var(--gray); margin-bottom: 12px; }
+.supplement-card__purchase-info { font-size: 12px; line-height: 1.5; color: var(--gray); margin-bottom: 12px; }
+.supplement-card__button {
+    font-size: 14px;
+    padding: 10px; 
+    border-radius: 8px; 
+    font-weight: bold;
+}
+.supplement-card__button--primary { 
+    background-color: #F09131;
+    color: #fff;
+}
+
+/* --- Block: check-list --- */
+.check-list { 
+    font-size: 12px; 
+    margin: 10px 0;
+    padding-top: 5px;
+    border-top: 1px solid #F6F6F6;
+}
+.check-list__item {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+.check-list__item--sub {
+    padding-left: 24px;
+    background-color: #F6F6F6;
+    margin-top: 5px;
+}
+.check-list__label { font-weight: bold; min-width: 150px; }
+.check-list__date { color: var(--gray); }
+.check-list__value { color: var(--gray); }
+.check-list__link { color: var(--gray); margin-left: auto; }
+
+/* --- Block: supplement-timer --- */
+.supplement-timer {
+    padding: 16px 0 0;
+}
+.supplement-timer__icon { font-size: 24px; color: var(--primary-color); margin-right: 16px; }
+.supplement-timer__info { flex-grow: 1; }
+.supplement-timer__title { font-weight: bold; }
+.supplement-timer__time { color: var(--gray); font-size: 12px; }
+.supplement-timer__details { font-size: 13px; font-weight: bold; }
+
+/* --- サプリ紹介セクション --- */
+.supplement-list {
+    margin-bottom: 20px;
+}
+.supplement-list__title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #87581E;
+    margin-bottom: 15px;
+}
+.supplement-list__thumbnails {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+/* --- サプリカード --- */
+.supplement-thumb {
+    width: 33%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.supplement-thumb__title {
+    font-size: 14px;
+    margin-top: 10px;
+}
+.supplement-thumb__company {
+    font-size: 13px;
+}
+
+.supplement-thumb__name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0 10px 0;
+}
+
+.supplement-thumb__button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #FFCC00;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #87581E;
+    margin-top: 8px;
+}
+
+/* --- Block: widget (右サイドバー) --- */
+.widget {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.widget__header { 
+    font-size: 13px; 
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 10px;
+    background-color: #F09131;
+    border-radius: 12px 12px 0 0;
+    margin-bottom: 10px;
+}
+.widget__title { font-size: 14px; font-weight: bold; }
+.widget__link { font-size: 12px; color: #fff; }
+
+/* --- Block: widget-list --- */
+.widget-list__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+.widget-list__item:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+.widget-list__image {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+.widget-list__name {font-size: 13px; line-height: 1.4; }
+.widget-list__company { color: var(--gray); font-size: 12px; margin-top: 4px; }

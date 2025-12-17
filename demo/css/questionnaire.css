@@ -1,0 +1,403 @@
+/* --- Block: main-content --- */
+.main-content {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* --- カード (汎用Block) --- */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* --- アンケートカード (Block) --- */
+.questionnaire {
+    border: none;
+    box-shadow: none;
+}
+.questionnaire__header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.questionnaire__title {
+    font-weight: bold;
+}
+.questionnaire__title i {
+    margin-right: 8px;
+    color: #666;
+}
+.questionnaire__meta {
+    margin-left: auto;
+    font-size: 13px;
+    color: #666;
+}
+.questionnaire__options {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    margin-left: 16px;
+    font-size: 16px;
+}
+.questionnaire__options .nav__icon {
+    height: 20px;
+    margin-right: 0;
+}
+.questionnaire__banner img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+.questionnaire__body {
+    padding: 0 0 20px;
+}
+.questionnaire__intro {
+    line-height: 1.7;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-bottom: 2px solid #E0E0E0;
+}
+
+/* --- フォーム (Block) --- */
+.form {
+    padding: 0 20px;
+    border-bottom: 2px solid #E0E0E0;
+    margin-bottom: 40px;
+}
+.form__group {
+    border: none;
+    padding: 0;
+    margin: 0 0 45px 0;
+}
+.form__title {
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background-color: #FFCC00;
+    text-align: center;
+    padding: 10px;
+}
+.form__legend {
+    margin-bottom: 12px;
+    padding: 0;
+    font-size: 16px;
+}
+.form__radio-label {
+    display: block;
+    padding: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.form__radio-group label:last-child {
+    margin-bottom: 0;
+}
+.form__radio-label input {
+    margin-right: 12px;
+}
+/* checkedのスタイル */
+.form__radio-label input:checked {
+    accent-color: #007bff;
+}
+.form__radio-label:has(input:checked) {
+    border-color: #007bff;
+    background-color: #eaf5ff;
+}
+
+.form__actions {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+}
+.form__last {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* --- ボタン (Block & Modifier) --- */
+.btn {
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+}
+.btn--primary {
+    background-color: #f8f8f8;
+    color: #333;
+    border: 2px solid #e4e4e4;
+}
+.btn--secondary {
+    background-color: transparent;
+    color: #333;
+    border: none;
+}
+
+/* --- 右サイドバーの要素 --- */
+.team-card {
+    padding: 16px;
+    cursor: pointer;
+    background-color: #FFCC00;
+}
+.team-card__avatars {
+    display: flex;
+    margin-bottom: 10px;
+}
+.team-card__avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.team-card__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.team-card__title a {
+    color: #fff;
+}
+.team-card__title .nav__icon {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+.action-btn {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 24px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    width: 50%;
+    color: #607C9C;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.action-btn .nav__icon {
+    width: 25px;
+    height: 25px;
+    margin: 0 0 10px;
+}
+
+.open-modal-button {
+    cursor: pointer;
+}
+
+/* --- モーダル --- */
+.modal {
+}
+
+.modal--hidden {
+    display: none;
+}
+
+.modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+.modal__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFEB99; 
+    padding: 30px 40px;
+    border-radius: 12px;
+    z-index: 20;
+    width: 80%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal__close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #F09131;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.modal__title {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.modal__subtitle {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.modal__note {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+
+/* --- チャレンジカード --- */
+.challenge-card {
+    display: flex; 
+    background-image: linear-gradient(#ffffff 40%, #fffae4);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden; 
+}
+
+.challenge-card__image {
+    width: 210px;
+    height: auto;
+    object-fit: cover;
+    padding: 20px;
+    min-width: auto;
+}
+
+.challenge-card__body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.challenge-card__title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #87581E;
+    border-bottom: 1px solid #FFCC00;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.challenge-card__level {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #A0A0A0;
+}
+.challenge-card__level__star {
+    color: #FFCC00;
+    font-size: 16px;
+}
+
+.challenge-card__description {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    color: #555;
+    flex-grow: 1; 
+}
+
+.challenge-card__button {
+    background-color: #f7ca18;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    align-self: flex-start;
+    transition: background-color 0.2s;
+}
+.challenge-card__button:hover {
+    background-color: #e6b800;
+}
+
+.challenge-card__button__start {
+    background-color: #F09131;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 10px;
+    display: flex;
+    margin: 0 auto;
+}
+.challenge-card__button__start:hover {
+    background-color: #F09131;
+}
+
+
+.challenge-card__achievement {
+    font-size: 15px;
+    padding: 10px;
+    display: flex; 
+    align-items: center;
+    border-radius: 0 0 5px 5px;
+}
+.challenge-card__achievement p {
+    padding-left: 10px;
+}
+
+/* --- トグルボタン --- */
+.challenge-card__toggle {
+    display: inline-block;
+    position: relative;
+    width: 35px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #dddddd;
+    cursor: pointer;
+    transition: background-color .4s;
+}
+
+.challenge-card__toggle:has(:checked) {
+    background-color: #FFCC00;
+}
+
+.challenge-card__toggle::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    background-color: #fff;
+    content: '';
+    transition: left .4s;
+}
+
+.challenge-card__toggle:has(:checked)::after {
+    left: 15px;
+}
+
+.challenge-card__toggle input {
+    display: none;
+}

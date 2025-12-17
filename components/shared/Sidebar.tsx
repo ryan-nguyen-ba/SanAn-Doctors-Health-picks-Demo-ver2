@@ -18,6 +18,7 @@ import {
   Building,
   Users,
   BarChart3,
+  FileText,
 } from "lucide-react";
 
 interface SidebarProps {
@@ -57,6 +58,7 @@ const providerMenuItems = [
   { href: "/provider/challenges", label: "チャレンジ管理", icon: Target },
   { href: "/provider/recipes", label: "レシピ管理", icon: BookOpen },
   { href: "/provider/missions", label: "ミッション管理", icon: CheckSquare },
+  { href: "/provider/articles", label: "記事・動画配信", icon: FileText },
   { href: "/provider/deliveries", label: "配信スケジュール", icon: Calendar },
   { href: "/provider/tenants", label: "テナント管理", icon: Building },
   { href: "/provider/users", label: "ユーザー管理", icon: Users },

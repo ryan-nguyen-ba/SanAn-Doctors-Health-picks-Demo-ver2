@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ミッションカード一覧 - Health Picks</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/mission.css">
+</head>
+<body>
+    <div class="container">
+
+        <header class="main-header">
+            <div class="main-header__logo__area">
+                <h1 class="main-header__logo"><img src="images/logo.png" alt="Health Picks"></h1>
+            </div>
+        </header>
+
+        <aside class="sidebar sidebar--left">
+            <div class="profile">
+                <img src="images/pic_avatar.jpg" alt="加藤 佳子" class="profile__avatar">
+                <h2 class="profile__name">加藤 佳子</h2>
+                <p class="profile__id">社員No: 100128</p>
+            </div>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="home.html" class="nav__link"><img src="images/icon_home.svg" alt="ホーム" class="nav__icon">ホーム</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="todo.html" class="nav__link"><img src="images/icon_todo.svg" alt="やること" class="nav__icon">やること</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="challenge.html" class="nav__link"><img src="images/icon_challenge.svg" alt="チャレンジ" class="nav__icon">チャレンジ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="timeline.html" class="nav__link"><img src="images/icon_recipe.svg" alt="レシピ" class="nav__icon">レシピ</a>
+                    </li>
+                    <li class="nav__item nav__item--active">
+                        <a href="mission.html" class="nav__link"><img src="images/icon_mission.svg" alt="ミッション" class="nav__icon">ミッション</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="supply.html" class="nav__link"><img src="images/icon_supply.svg" alt="サプリ" class="nav__icon">サプリ</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__footer">
+                 <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link"><img src="images/icon_settings.svg" alt="設定" class="nav__icon">設定</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link"><img src="images/icon_logout.svg" alt="ログアウト" class="nav__icon">ログアウト</a>
+                    </li>
+                </ul>
+                <div class="support-info">
+                    <p class="support-info__title">サポート窓口</p>
+                    <a href="mailto:support@healthpicks.com" class="support-info__email"><img src="images/icon_support.svg" alt="ログアウト" class="nav__icon">support@healthpicks.com</a>
+                </div>
+            </div>
+        </aside>
+
+        <div class="main-area">
+            <main class="main-content">
+                <section class="content-section">
+                    <h2 class="content-section__title">挑戦中のミッションカード一覧</h2>
+                    <div class="mission-grid mission-grid--horizontal">
+                        <div class="mission-card__details">
+                            <h4 class="mission-card__subtitle">寝る2時間前スマホOFF宣言</h4>
+                            <img src="images/mission/pic_01.jpg" alt="" class="mission-card__image">
+                            <p class="mission-card__description">今夜、寝る30分前までにスマホやPC、テレビなどの画面を見るのをやめてみよう。</p>
+                            <div class="mission-card__achievement">
+                                <p>挑戦する</p>
+                                <label class="mission-card__toggle"><input type="checkbox" class="open-modal-button-mission"/></label>
+                            </div>
+                        </div>
+
+                        <div class="mission-card__details">
+                            <h4 class="mission-card__subtitle">布団に入る前に5分の深呼吸</h4>
+                            <img src="images/mission/pic_02.jpg" alt="" class="mission-card__image">
+                            <p class="mission-card__description">今夜、寝る30分前までにスマホやPC、テレビなどの画面を見るのをやめてみよう。</p>
+                            <div class="mission-card__achievement">
+                                <p>挑戦する</p>
+                                <label class="mission-card__toggle"><input type="checkbox" class="open-modal-button-mission"/></label>
+                            </div>
+                        </div>                        
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <div class="content-section__header">
+                        <h2 class="content-section__title">ミッションカード一覧</h2>
+                        <button class="filter-button">
+                            <span class="filter-button__text">カテゴリで並べる</span>
+                            <span class="filter-button__icon">+</span>
+                        </button>
+                    </div>
+                    <h3 class="category-title">睡眠改善</h3>
+                    <div class="mission-grid">
+                        <div class="mission-card__details">
+                            <h4 class="mission-card__subtitle">朝、5分カーテンを開けよう</h4>
+                            <img src="images/mission/pic_03.jpg" alt="" class="mission-card__image">
+                            <p class="mission-card__description">今夜、寝る30分前までにスマホやPC、テレビなどの画面を見るのをやめてみよう。</p>
+                            <div class="mission-card__achievement">
+                                <p>挑戦する</p>
+                                <label class="mission-card__toggle"><input type="checkbox" class="open-modal-button-mission"/></label>
+                            </div>
+                        </div>
+
+                        <div class="mission-card__details">
+                            <h4 class="mission-card__subtitle">一駅前から歩こう</h4>
+                            <img src="images/mission/pic_04.jpg" alt="" class="mission-card__image">
+                            <p class="mission-card__description">今夜、寝る30分前までにスマホやPC、テレビなどの画面を見るのをやめてみよう。</p>
+                            <div class="mission-card__achievement">
+                                <p>挑戦する</p>
+                                <label class="mission-card__toggle"><input type="checkbox" class="open-modal-button-mission"/></label>
+                            </div>
+                        </div>
+                        <div class="mission-card__details">
+                            <h4 class="mission-card__subtitle">食事は寝る3時間前まで</h4>
+                            <img src="images/mission/pic_05.jpg" alt="" class="mission-card__image">
+                            <p class="mission-card__description">今夜、寝る30分前までにスマホやPC、テレビなどの画面を見るのをやめてみよう。</p>
+                            <div class="mission-card__achievement">
+                                <p>挑戦する</p>
+                                <label class="mission-card__toggle"><input type="checkbox" class="open-modal-button-mission"/></label>
+                            </div>
+                        </div>
+                        <div class="mission-card__details">
+                            <h4 class="mission-card__subtitle">日光に浴びよう</h4>
+                            <img src="images/mission/pic_06.jpg" alt="" class="mission-card__image">
+                            <p class="mission-card__description">今夜、寝る30分前までにスマホやPC、テレビなどの画面を見るのをやめてみよう。</p>
+                            <div class="mission-card__achievement">
+                                <p>挑戦する</p>
+                                <label class="mission-card__toggle"><input type="checkbox" class="open-modal-button-mission"/></label>
+                            </div>
+                        </div>
+                        <div class="mission-card__details">
+                            <h4 class="mission-card__subtitle">果糖を中心に摂ろう</h4>
+                            <img src="images/mission/pic_07.jpg" alt="" class="mission-card__image">
+                            <p class="mission-card__description">今夜、寝る30分前までにスマホやPC、テレビなどの画面を見るのをやめてみよう。</p>
+                            <div class="mission-card__achievement">
+                                <p>挑戦する</p>
+                                <label class="mission-card__toggle"><input type="checkbox" class="open-modal-button-mission"/></label>
+                            </div>
+                        </div>
+                        <div class="mission-card__details">
+                            <h4 class="mission-card__subtitle">胃に負担が少ない食事</h4>
+                            <img src="images/mission/pic_08.jpg" alt="" class="mission-card__image">
+                            <p class="mission-card__description">今夜、寝る30分前までにスマホやPC、テレビなどの画面を見るのをやめてみよう。</p>
+                            <div class="mission-card__achievement">
+                                <p>挑戦する</p>
+                                <label class="mission-card__toggle"><input type="checkbox" class="open-modal-button-mission"/></label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <aside class="sidebar sidebar--right">
+            <div class="widget">
+                <a href="#" class="widget__header widget__header--link">
+                    <h4 class="widget__title">ミッションカレンダー</h4>
+                    >
+                </a>
+                <div class="widget__calendar">
+                    <img src="images/mission/img_side_calender.svg" alt="" class="widget__calendar__icon">
+                </div>
+                <!-- <table class="calendar">
+                    <thead><tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr></thead>
+                    <tbody>
+                        <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td>1</td><td>2</td></tr>
+                        <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+                        <tr><td>10</td><td>11</td><td>12</td><td>13</td><td class="calendar__day--today">14</td><td>15</td><td>16</td></tr>
+                        <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+                        <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
+                        <tr><td>31</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                    </tbody>
+                </table> -->
+            </div>
+
+            <div class="widget">
+                <header class="widget__header">
+                    <h4 class="widget__title">お気に入りミッション</h4>
+                    <a href="#" class="widget__link">もっと見る ></a>
+                </header>
+                 <ul class="widget-list">
+                    <li class="widget-list__item">
+                        <img src="images/mission/pic_01.jpg" alt="" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">寝る前の「断スマ」！</p>
+                            <p class="widget-list__meta">2025/08/28</p>
+                        </div>
+                    </li>
+                    <li class="widget-list__item">
+                        <img src="images/mission/pic_02.jpg" alt="" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">布団に入る前に5分の深呼吸</p>
+                            <p class="widget-list__meta">2025/08/28</p>
+                        </div>
+                    </li>
+                    <li class="widget-list__item">
+                        <img src="images/mission/pic_05.jpg" alt="" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">食事は寝る3時間前まで</p>
+                            <p class="widget-list__meta">2025/08/28</p>
+                        </div>
+                    </li>
+                    <li class="widget-list__item">
+                        <img src="images/mission/pic_03.jpg" alt="" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">朝、5分カーテンを開けよう</p>
+                            <p class="widget-list__meta">2025/08/28</p>
+                        </div>
+                    </li>
+                    <li class="widget-list__item">
+                        <img src="images/mission/pic_04.jpg" alt="" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">一駅前から歩こう</p>
+                            <p class="widget-list__meta">2025/08/28</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+             <div class="widget">
+                <header class="widget__header">
+                    <h4 class="widget__title">新着ミッション</h4>
+                    <a href="#" class="widget__link">もっと見る ></a>
+                </header>
+                 <ul class="widget-list">
+                    <li class="widget-list__item">
+                        <img src="images/mission/pic_05.jpg" alt="" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">食事は寝る3時間前まで</p>
+                            <p class="widget-list__meta">2025/08/28</p>
+                        </div>
+                    </li>
+                    <li class="widget-list__item">
+                        <img src="images/mission/pic_03.jpg" alt="" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">朝、5分カーテンを開けよう</p>
+                            <p class="widget-list__meta">2025/08/28</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+
+    <div class="mission-modal mission-modal--hidden">
+        <div class="mission-modal__overlay"></div>
+        <div class="mission-modal__content">
+            <button class="mission-modal__close-button">&times;</button>
+
+            <div class="mission-card__details">
+                <h4 class="mission-card__subtitle">寝る2時間前スマホOFF宣言</h4>
+                <img src="images/mission/modal_pic_01.jpg" alt="" class="mission-card__image">
+                <p class="mission-card__description">今夜、寝る30分前までにスマホやPC、テレビなどの画面を見るのをやめてみよう。</p>
+            </div>
+            
+            <p class="mission-modal__description">
+                寝る30分前にスマホを見ないようにすると、脳がリラックスして寝つきが良くなり、睡眠の質が向上します。メラトニンの分泌も整い、朝の目覚めがスッキリしやすくなります。
+            </p>
+            
+            <button class="mission-modal__button" onclick="location.href='home.html'">このミッションに挑戦する</button>
+
+            <div class="mission-separator">
+                <span class="mission-separator__text">ミッション内容</span>
+                <ul class="mission-list">
+                    <li class="mission-list__item">
+                        <span class="mission-list__icon"></span>
+                        <span class="mission-list__text">就寝1時間前にスマホを別室に置く</span>
+                    </li>
+                    <li class="mission-list__item">
+                        <span class="mission-list__icon"></span>
+                        <span class="mission-list__text">夜21時以降は通知をオフにする</span>
+                    </li>
+                    <li class="mission-list__item">
+                        <span class="mission-list__icon"></span>
+                        <span class="mission-list__text">SNSや動画視聴アプリをタイマーで制限</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/mission_modal.js"></script>
+
+</body>
+</html>

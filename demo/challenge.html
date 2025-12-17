@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャレンジ - Health Picks</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/challenge.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="main-header">
+            <div class="main-header__logo__area">
+                <h1 class="main-header__logo"><img src="images/logo.png" alt="Health Picks"></h1>
+            </div>
+        </header>
+
+        <aside class="sidebar sidebar--left">
+            <div class="profile">
+                <img src="images/pic_avatar.jpg" alt="加藤 佳子" class="profile__avatar">
+                <h2 class="profile__name">加藤 佳子</h2>
+                <p class="profile__id">社員No: 100128</p>
+            </div>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="home.html" class="nav__link"><img src="images/icon_home.svg" alt="ホーム" class="nav__icon">ホーム</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="todo.html" class="nav__link"><img src="images/icon_todo.svg" alt="やること" class="nav__icon">やること</a>
+                    </li>
+                    <li class="nav__item nav__item--active">
+                        <a href="challenge.html" class="nav__link"><img src="images/icon_challenge.svg" alt="チャレンジ" class="nav__icon">チャレンジ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="timeline.html" class="nav__link"><img src="images/icon_recipe.svg" alt="レシピ" class="nav__icon">レシピ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="supply.html" class="nav__link"><img src="images/icon_supply.svg" alt="サプリ" class="nav__icon">サプリ</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__footer">
+                 <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link"><img src="images/icon_settings.svg" alt="設定" class="nav__icon">設定</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link"><img src="images/icon_logout.svg" alt="ログアウト" class="nav__icon">ログアウト</a>
+                    </li>
+                </ul>
+                <div class="support-info">
+                    <p class="support-info__title">サポート窓口</p>
+                    <a href="mailto:support@healthpicks.com" class="support-info__email"><img src="images/icon_support.svg" alt="ログアウト" class="nav__icon">support@healthpicks.com</a>
+                </div>
+            </div>
+        </aside>
+
+        <div class="main-area">
+            <main class="main-content">
+
+                <section class="content-section">
+                    <h2 class="content-section__title">マイチャレンジ</h2>
+                    <div class="challenge-thumb__wrapper">
+                        <div class="challenge-thumb">
+                            <h3 class="challenge-thumb__title">睡眠の質 改善チャレンジ</h3>
+                            <img src="images/questionnaire/pic_modal_01.jpg" alt="" class="challenge-thumb__image">
+                        </div>
+
+                        <div class="challenge-thumb">
+                            <h3 class="challenge-thumb__title">疲労 改善チャレンジ</h3>
+                            <img src="images/questionnaire/pic_modal_02.jpg" alt="" class="challenge-thumb__image">
+                        </div>
+
+                        <div class="challenge-thumb">
+                            <h3 class="challenge-thumb__title">代謝 改善チャレンジ</h3>
+                            <img src="images/questionnaire/pic_modal_03.jpg" alt="" class="challenge-thumb__image">
+                        </div>
+
+                        <div class="challenge-thumb">
+                            <h3 class="challenge-thumb__title">腸内環境 改善チャレンジ</h3>
+                            <img src="images/questionnaire/pic_modal_04.jpg" alt="" class="challenge-thumb__image">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="content-section__title">全てのチャレンジ一覧</h2>
+                    <div class="challenge-card">
+                        <img src="images/questionnaire/pic_modal_01.jpg" alt="" class="challenge-card__image">
+                        <div class="challenge-card__body">
+                            <h3 class="challenge-card__title">睡眠の質 改善チャレンジ</h3>
+                            <p class="challenge-card__level">チャレンジレベル <span class="challenge-card__level__star">★★★★☆</span></p>
+                            <p class="challenge-card__description">質の高い睡眠は、心身の健康に不可欠です。日中の疲労回復はもちろん、ストレス軽減、免疫力向上、記憶の定着を促します。結果的に集中力や判断力が高まり、仕事や学習の効率を向上させ、生活全体の質を高めるための重要な鍵となります。</p>
+                            <button class="challenge-card__button">このチャレンジを選ぶ</button>
+                        </div>
+                    </div>
+    
+                    <div class="challenge-card">
+                        <img src="images/questionnaire/pic_modal_02.jpg" alt="" class="challenge-card__image">
+                        <div class="challenge-card__body">
+                            <h3 class="challenge-card__title">疲労 改善チャレンジ</h3>
+                            <p class="challenge-card__level">チャレンジレベル <span class="challenge-card__level__star">★★☆☆☆</span></p>
+                            <p class="challenge-card__description">体の疲労改善は、日々の活力を保ち最高の能力を発揮するために不可欠です。疲労の蓄積は、集中力や免疫力の低下、さらには怪我のリスクを高めます。放置すれば慢性疲労に繋がりかねません。心身の健康と生活の質を守るため、こまめなケアが重要です。</p>
+                            <button class="challenge-card__button">このチャレンジを選ぶ</button>
+                        </div>
+                    </div>
+    
+                    <div class="challenge-card">
+                        <img src="images/questionnaire/pic_modal_03.jpg" alt="" class="challenge-card__image">
+                        <div class="challenge-card__body">
+                            <h3 class="challenge-card__title">カラダの代謝 改善チャレンジ</h3>
+                            <p class="challenge-card__level">チャレンジレベル <span class="challenge-card__level__star">★★★★★</span></p>
+                            <p class="challenge-card__description">代謝を改善しエネルギー消費を高めることは、太りにくく痩せやすい体を作る基本です。血行が促進され、冷えやむくみ、肩こりを解消。老廃物の排出も促され、肌の健康や疲労回復にも繋がります。健康的な毎日を送る上で非常に重要です。</p>
+                            <button class="challenge-card__button">このチャレンジを選ぶ</button>
+                        </div>
+                    </div>
+    
+                        <div class="challenge-card">
+                        <img src="images/questionnaire/pic_modal_04.jpg" alt="" class="challenge-card__image">
+                        <div class="challenge-card__body">
+                            <h3 class="challenge-card__title">腸内環境 改善チャレンジ</h3>
+                            <p class="challenge-card__level">チャレンジレベル <span class="challenge-card__level__star">★★★☆☆</span></p>
+                            <p class="challenge-card__description">便通改善は、お腹の不快感を解消するだけではありません。腸内環境を整えることで、老廃物や有害物質の排出を促進し、肌荒れの改善に繋がります。また、栄養の吸収を助けて免疫力を高めるなど、心身全体の健康を支えるための重要な生活習慣です。</p>
+                            <button class="challenge-card__button">このチャレンジを選ぶ</button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <aside class="sidebar sidebar--right">
+            <div class="widget">
+                <header class="widget__header">
+                    <h4 class="widget__title">お気に入りチャレンジ</h4>
+                    <a href="#" class="widget__link">もっと見る ></a>
+                </header>
+                 <ul class="widget-list">
+                    <li class="widget-list__item">
+                        <img src="images/questionnaire/pic_modal_01.jpg" alt="" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">睡眠の質 改善チャレンジ</p>
+                            <p class="widget-list__meta">2025/08/28</p>
+                        </div>
+                    </li>
+                    <li class="widget-list__item">
+                        <img src="images/questionnaire/pic_modal_02.jpg" alt="" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">疲労 改善チャレンジ</p>
+                            <p class="widget-list__meta">2025/08/28</p>
+                        </div>
+                    </li>
+                    <li class="widget-list__item">
+                        <img src="images/questionnaire/pic_modal_03.jpg" alt="" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">カラダの代謝 改善チャレンジ</p>
+                            <p class="widget-list__meta">2025/08/28</p>
+                        </div>
+                    </li>
+                    <li class="widget-list__item">
+                        <img src="images/questionnaire/pic_modal_04.jpg" alt="" class="widget-list__image">
+                        <div class="widget-list__info">
+                            <p class="widget-list__name">腸内環境 改善チャレンジ</p>
+                            <p class="widget-list__meta">2025/08/28</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        
+    </div>
+
+</body>
+</html>

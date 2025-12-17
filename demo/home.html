@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホーム - Health Picks</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <div class="container">
+
+        <header class="main-header">
+            <div class="main-header__logo__area">
+                <h1 class="main-header__logo"><img src="images/logo.png" alt="Health Picks"></h1>
+            </div>
+        </header>
+
+        <aside class="sidebar sidebar--left">
+            <div class="profile">
+                <img src="images/pic_avatar.jpg" alt="加藤 佳子" class="profile__avatar">
+                <h2 class="profile__name">加藤 佳子</h2>
+                <p class="profile__id">社員No: 100128</p>
+            </div>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item nav__item--active">
+                        <a href="home.html" class="nav__link"><img src="images/icon_home.svg" alt="ホーム" class="nav__icon">ホーム</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="todo.html" class="nav__link"><img src="images/icon_todo.svg" alt="やること" class="nav__icon">やること</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="challenge.html" class="nav__link"><img src="images/icon_challenge.svg" alt="チャレンジ" class="nav__icon">チャレンジ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="timeline.html" class="nav__link"><img src="images/icon_recipe.svg" alt="レシピ" class="nav__icon">レシピ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="supply.html" class="nav__link"><img src="images/icon_supply.svg" alt="サプリ" class="nav__icon">サプリ</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__footer">
+                 <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link"><img src="images/icon_settings.svg" alt="設定" class="nav__icon">設定</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link"><img src="images/icon_logout.svg" alt="ログアウト" class="nav__icon">ログアウト</a>
+                    </li>
+                </ul>
+                <div class="support-info">
+                    <p class="support-info__title">サポート窓口</p>
+                    <a href="mailto:support@healthpicks.com" class="support-info__email"><img src="images/icon_support.svg" alt="ログアウト" class="nav__icon">support@healthpicks.com</a>
+                </div>
+            </div>
+        </aside>
+
+
+        <div class="notifications-content">
+
+            <section class="hero-banner">
+                <div class="hero-banner__text">
+                    <h2>カラダに習慣<br>レシピで改善</h2>
+                </div>
+            </section>
+            
+            <section class="notifications-area">
+                <div class="notifications-grid">
+                    <div class="notification-card">
+                        <header class="notification-card__header">
+                            <h3 class="notification-card__title"><img src="images/home/icon_bell.svg" alt="" class="nav__icon">お知らせ</h3>
+                            <span class="notification-card__badge">1</span>
+                        </header>
+                        <ul class="notification-card__list">
+                            <li class="notification-item">
+                                <div class="notification-item__header">
+                                    <p><span class="notification-item__icon notification-item__icon--campaign"></span>キャンペーン</p>
+                                    <span class="notification-item__time">1時間前</span>
+                                </div>
+                                <div class="notification-item__content">
+                                    <p class="notification-item__text">初回ご利用キャンペーンのお知らせが届きました。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="notification-card">
+                        <header class="notification-card__header">
+                            <h3 class="notification-card__title"><img src="images/home/icon_chat.svg" alt="" class="nav__icon">チャット</h3>
+                            <span class="notification-card__badge">2</span>
+                        </header>
+                        <ul class="notification-card__list">
+                            <li class="notification-item">
+                                <div class="notification-item__header">
+                                    <p><span class="notification-item__icon notification-item__icon--campaign"></span>チャット栄養相談</p>
+                                    <span class="notification-item__time">1時間前</span>
+                                </div>
+                                <div class="notification-item__content">
+                                    <p class="notification-item__text">チャットが届きました。</p>
+                                    <p class="notification-item__meta">田中 さやか</p>
+                                </div>
+                            </li>
+                             <li class="notification-item">
+                                <div class="notification-item__header">
+                                    <p><span class="notification-item__icon notification-item__icon--campaign"></span>チャット栄養相談</p>
+                                    <span class="notification-item__time">1時間前</span>
+                                </div>
+                                <div class="notification-item__content">
+                                    <p class="notification-item__text">パーソナルアドバイスが届きました。</p>
+                                    <p class="notification-item__meta">田中 絢子</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="notification-card">
+                         <header class="notification-card__header">
+                            <h3 class="notification-card__title"><img src="images/home/icon_notifications.svg" alt="" class="nav__icon">通知</h3>
+                            <span class="notification-card__badge">2</span>
+                        </header>
+                        <ul class="notification-card__list">
+                             <li class="notification-item">
+                                <div class="notification-item__header">
+                                    <p><span class="notification-item__icon notification-item__icon--campaign"></span>ミッション通知</p>
+                                    <span class="notification-item__time">1時間前</span>
+                                </div>
+                                <div class="notification-item__content">
+                                    <p class="notification-item__text">そろそろミッションのお時間です。</p>
+                                    <p class="notification-item__meta">6/28 23:00に予約</p>
+                                </div>
+                            </li>
+                             <li class="notification-item">
+                                <div class="notification-item__header">
+                                    <p><span class="notification-item__icon notification-item__icon--campaign"></span>サプリタイマー</p>
+                                    <span class="notification-item__time">1時間前</span>
+                                </div>
+                                <div class="notification-item__content">
+                                    <p class="notification-item__text">服用の時間です。</p>
+                                    <p class="notification-item__meta">毎日 22:45に予約</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                     <div class="notification-card">
+                         <header class="notification-card__header">
+                            <h3 class="notification-card__title"><img src="images/home/icon_truck.svg" alt="" class="nav__icon">配送</h3>
+                            <span class="notification-card__badge">2</span>
+                        </header>
+                         <ul class="notification-card__list">
+                             <li class="notification-item">
+                                <div class="notification-item__header">
+                                    <p><span class="notification-item__icon notification-item__icon--campaign"></span>〇〇〇〇〇〇〇〇</p>
+                                    <span class="notification-item__time">1時間前</span>
+                                </div>
+                                <div class="notification-item__content">
+                                    <p class="notification-item__text">商品の配送が完了しました。</p>
+                                    <p class="notification-item__meta">6/28 10:00発送分</p>
+                                </div>
+                            </li>
+                              <li class="notification-item">
+                                <div class="notification-item__header">
+                                    <p><span class="notification-item__icon notification-item__icon--campaign"></span>〇〇〇〇〇〇〇〇</p>
+                                    <span class="notification-item__time">1時間前</span>
+                                </div>
+                                <div class="notification-item__content">
+                                    <p class="notification-item__text">商品が発送されました。</p>
+                                    <p class="notification-item__meta">7/28 10:00発送分</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                     <div class="notification-card">
+                         <header class="notification-card__header">
+                            <h3 class="notification-card__title"><img src="images/home/icon_wallet.svg" alt="" class="nav__icon">お支払い</h3>
+                            <span class="notification-card__badge">1</span>
+                        </header>
+                         <ul class="notification-card__list">
+                             <li class="notification-item">
+                                <div class="notification-item__header">
+                                    <p><span class="notification-item__icon notification-item__icon--campaign"></span>〇〇〇〇〇〇〇〇</p>
+                                    <span class="notification-item__time">1時間前</span>
+                                </div>
+                                <div class="notification-item__content">
+                                    <p class="notification-item__text">請求が届きました。</p>
+                                    <p class="notification-item__meta">オンライン診療費(6/28 10:00)</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <div class="main-area">
+            <main class="main-content">
+            <section class="mission-card">
+                <header class="mission-card__header">
+                    <h4>選択したチャレンジ</h4>
+                    <a href="mission.html">ミッション一覧 ></a>
+                </header>
+                <div class="mission-card__title-group">
+                    <img src="images/home/pic_mission_icon_01.jpg" alt="" class="mission-card__icon">
+                    <div class="mission-card__title-group__inner">
+                        <div class="mission-card__title-group__header">
+                            <h3 class="mission-card__title">睡眠の質 改善チャレンジ</h3>
+                            <a href="challenge.html">他のチャレンジを見る ></a>
+                        </div>
+                        <div class="mission-card__level">チャレンジレベル <span class="mission-card__level__star">★★★☆☆</span></div>
+                    </div>
+                </div>
+                <div class="mission-card__body">
+                    <div class="mission-card__recipe">
+                        <img src="images/home/pic_mission_card_01.jpg" alt="" class="mission-card__image">
+                        <h4 class="mission-card__subtitle">夜を取り戻す、スマホ断ちレシピ</h4>
+                        <p class="mission-card__description">「しっかり寝たはずなのに、なぜか疲れが取れない…。」そんなお悩み、ありませんか？その原因は、あなたが寝る前に見ているスマートフォンのブルーライト…</p>
+                        <button class="mission-card__button" onclick="location.href='recipe_detail.html'">健康レシピを見る</button>
+                    </div>
+                    <div class="mission-card__details">
+                        <h4 class="mission-card__subtitle">寝る2時間前スマホOFF宣言</h4>
+                        <img src="images/home/pic_mission_card_02.jpg" alt="" class="mission-card__image">
+                        <p class="mission-card__description">今夜、寝る30分前までにスマホやPC、テレビなどの画面を見るのをやめてみよう。</p>
+                        <div class="mission-card__achievement">
+                            <p>今日も達成した</p>
+                            <label class="mission-card__toggle"><input type="checkbox"/></label>
+                        </div>
+                    </div>
+                    <div class="mission-card__progress">
+                        <!--<div class="progress-donut" style="--percentage: 62;">
+                            <span class="progress-donut__label">ミッション達成率</span>
+                            <span class="progress-donut__percent">62<small>%</small></span>
+                        </div>
+                        <div class="progress-days">継続日数 <strong>19/30</strong>日</div>
+                        <div class="coupon-info">
+                            <p>残り<strong>4</strong>ミッション達成でクーポンコードが貰えます！</p>
+                        </div>-->
+                        <img src="images/home/img_progress_01.svg" alt="" class="mission-card__progress-image">
+                    </div>
+                </div>
+            </section>
+
+            <section class="mission-card">
+                <header class="mission-card__header">
+                    <h4>選択したチャレンジ</h4>
+                    <a href="mission.html">ミッション一覧 ></a>
+                </header>
+                <div class="mission-card__title-group">
+                    <img src="images/home/pic_mission_icon_02.jpg" alt="" class="mission-card__icon">
+                    <div class="mission-card__title-group__inner">
+                        <div class="mission-card__title-group__header">
+                            <h3 class="mission-card__title">睡眠の質 改善チャレンジ</h3>
+                            <a href="challenge.html">他のチャレンジを見る ></a>
+                        </div>
+                        <div class="mission-card__level">チャレンジレベル <span class="mission-card__level__star">★★★☆☆</span></div>
+                    </div>
+                </div>
+                <div class="mission-card__body">
+                    <div class="mission-card__recipe">
+                        <img src="images/home/pic_mission_card_03.jpg" alt="" class="mission-card__image">
+                        <h4 class="mission-card__subtitle">疲れ知らずのカラダをつくるレシピ</h4>
+                        <p class="mission-card__description">最近、朝起きても疲れが取れていない、日中に集中力が続かない、夜になるとぐったり……そんな状態が当たり前になっていませんか？</p>
+                        <button class="mission-card__button" onclick="location.href='recipe_detail.html'">健康レシピを</button>
+                    </div>
+                    <div class="mission-card__details">
+                        <h4 class="mission-card__subtitle">疲れに負けない「筋肉装備」⋯</h4>
+                        <img src="images/home/pic_mission_card_04.jpg" alt="" class="mission-card__image">
+                        <p class="mission-card__description">疲れ知らずのカラダは、あなたのパフォーマンスも気分も、そして人生の質さえも変えて⋯</p>
+                        <div class="mission-card__achievement">
+                            <p>今日も達成した</p>
+                            <label class="mission-card__toggle"><input type="checkbox"/></label>
+                        </div>
+                    </div>
+                    <div class="mission-card__progress">
+                        <!-- <div class="progress-donut" style="--percentage: 62;">
+                            <span class="progress-donut__label">ミッション達成率</span>
+                            <span class="progress-donut__percent">62<small>%</small></span>
+                        </div>
+                        <div class="progress-days">継続日数 <strong>19/30</strong>日</div>
+                        <div class="coupon-info">
+                            <p>残り<strong>4</strong>ミッション達成でクーポンコードが貰えます！</p>
+                        </div> -->
+                        <img src="images/home/img_progress_02.svg" alt="" class="mission-card__progress-image">
+                    </div>
+                </div>
+            </section>
+        </main>
+        </div>
+
+       <aside class="sidebar sidebar--right">
+           <div class="widget">
+                <img src="images/home/bnr_01.png" alt="睡眠前に＋α" class="widget__ad-image">
+           </div>
+           <!-- <div class="widget">
+               <h4 class="widget__title">HealthPicksポイント</h4>
+               <div class="points-display">1055<small>P</small></div>
+           </div> -->
+            <div class="widget">
+               <h4 class="widget__title">取得したバッジ <a href="#">全部見る ></a></h4>
+               <!-- <div class="badges-list">
+                   <span class="badge-icon"><i class="fa-solid fa-medal"></i></span>
+                   <span class="badge-icon"><i class="fa-solid fa-medal"></i></span>
+                   <span class="badge-icon"><i class="fa-solid fa-medal"></i></span>
+                   <span class="badge-icon"><i class="fa-solid fa-medal"></i></span>
+               </div> -->
+               <div class="widget__image"><img src="images/home/img_side_01.svg" alt=""></div>
+           </div>
+           <div class="widget">
+               <h4 class="widget__title">社内取り組みランキング <a href="#">部署毎 ></a></h4>
+               <!-- <span class="widget__rank">23/264 <small>位</small></span>
+               <div class="progress-bar">
+                   <div class="progress-bar__inner" style="width: 75%;"></div>
+               </div> -->
+               <div class="widget__image"><img src="images/home/img_side_02.svg" alt=""></div>
+           </div>
+           <div class="widget">
+               <h4 class="widget__title">サプリタイマー <a href="#">設定する ></a></h4>
+               <!-- <div class="timer-setting">
+                   <p><i class="fa-solid fa-calendar-day"></i> 8月28日木曜日</p>
+                   <p><i class="fa-solid fa-clock"></i> 毎日 22時40分</p>
+               </div>
+                <table class="calendar">
+                   <thead><tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr></thead>
+                   <tbody>
+                       <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td>1</td><td>2</td></tr>
+                       <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+                       <tr><td>10</td><td>11</td><td>12</td><td>13</td><td class="calendar__day--today">14</td><td>15</td><td>16</td></tr>
+                       <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+                       <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
+                       <tr><td>31</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                   </tbody>
+               </table>
+               <button class="widget__button">タイマーを追加する <i class="fa-solid fa-plus"></i></button> -->
+               <div class="widget__image"><img src="images/home/img_side_03.svg" alt=""></div>
+           </div>
+       </aside>
+
+
+    </div>
+</body>
+</html>

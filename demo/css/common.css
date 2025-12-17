@@ -1,0 +1,183 @@
+/* --- 変数 & 基本設定 --- */
+:root {
+    --primary-yellow: #FFCC00;
+    --light-gray: #f5f5f7;
+    --border-color: #e0e0e0;
+    --text-dark: #333;
+    --text-light: #666;
+    --text-brown: #5C3D16;
+    --primary-blue: #007bff;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #EAEAEA;
+    color: var(--text-dark);
+}
+
+/* --- 全体レイアウト (Block) --- */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- サイドバー (Block & Modifier) --- */
+.sidebar {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar--left {
+    width: 240px;
+    background-color: var(--primary-yellow);
+    position: relative;
+    z-index: 10;
+    padding: 24px 0;
+    color: var(--text-brown);
+}
+
+.sidebar--right {
+    width: 350px;
+    background-color: #EAEAEA;
+    border-left: 1px solid #CECECE;
+    padding: 140px 24px 24px;
+}
+
+.sidebar__footer .nav__list {
+    border-top: 1px solid #e0b400;
+    border-bottom: 1px solid #e0b400;
+    padding: 12px 24px;
+}
+
+/* --- プロフィール (Block) --- */
+.profile {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.profile__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 3px solid white;
+    display: inline;
+}
+.profile__name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.profile__id {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* --- ナビゲーション (Block) --- */
+.nav__list {
+    list-style: none;
+    padding: 0 24px;
+    margin: 0;
+}
+.nav__item {
+    margin-bottom: 8px;
+}
+.nav__item--active {
+    background-color: #FFEB99;
+    border-radius: 20px;
+}
+.nav__link {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+}
+.nav__link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
+.nav__item--active .nav__link {
+    font-weight: bold;
+}
+.nav__icon {
+    width: 20px;
+    margin-right: 16px;
+    text-align: center;
+}
+
+/* --- サポート情報 (Block) --- */
+.support-info {
+    margin-top: 30px;
+    padding: 0 24px;
+    font-size: 12px;
+}
+.support-info__title {
+    margin: 0;
+    font-weight: bold;
+}
+.support-info__email {
+    text-decoration: none;
+    display: flex;
+}
+.support-info__email .nav__icon {
+    width: 15px;
+    margin-right: 5px;
+}
+.support-info__email:hover {
+    text-decoration: underline;
+}
+
+/* --- メインコンテンツ (Block) --- */
+.main-area {
+    flex: 1; /* 残りのスペースを全て使用 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 中央寄せ */
+    padding: 140px 20px 20px;
+}
+
+/* --- メインヘッダー --- */
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding-left: 240px;
+    height: 120px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.main-header__logo__area {
+    height: 65px;
+    box-sizing: border-box;
+    padding: 15px 0 0;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+}
+.main-header__logo {
+    width: 170px;
+    margin: 0 auto;
+}
+.main-header__nav {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-light);
+    height: 55px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.main-header__nav span {
+    padding:0 25px 10px;
+    margin: 0 25px;
+    border-bottom: 3px solid #fff;
+}
+.main-header__nav__active {
+    border-bottom: 3px solid var(--primary-yellow) !important;
+}

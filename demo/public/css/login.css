@@ -1,0 +1,120 @@
+/* --- 基本設定 --- */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    background-color: #fff;
+}
+
+/* --- Block: login-page --- */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Block: login-form --- */
+.login-form {
+    background-color: #ffffff;
+    padding: 40px;
+    width: 100%;
+    max-width: 380px;
+    box-sizing: border-box;
+}
+
+/* --- Elements of login-form --- */
+.login-form__header {
+    margin-bottom: 30px;
+}
+
+.login-form__logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 40px 0;
+    position: relative;
+    display: inline-block;
+}
+
+.login-form__title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.login-form__group {
+    margin-bottom: 20px;
+}
+
+.login-form__input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.login-form__input:focus {
+    outline: none;
+    border-color: #ffc107;
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+}
+
+.login-form__password-wrapper {
+    position: relative;
+}
+
+.login-form__toggle-password {
+    width: 26px;
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.login-form__options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.login-form__checkbox {
+    margin-right: 8px;
+}
+
+.login-form__label {
+    font-size: 14px;
+    color: #555;
+}
+
+.login-form__button {
+    width: 100%;
+    padding: 10px;
+    background-color: #F09131;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.login-form__footer {
+    font-size: 13px;
+    text-align: center;
+}
+.login-form__footer-text {
+    margin-bottom: 5px;
+    color: #555;
+}
+.login-form__link {
+    color: #007bff;
+    text-decoration: underline;
+}
+.login-form__link:hover {
+    text-decoration: none;
+}

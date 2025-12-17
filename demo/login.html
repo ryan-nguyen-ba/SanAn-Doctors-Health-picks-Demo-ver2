@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン - Health Picks</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <div class="login-page">
+        <main class="login-form">
+            <header class="login-form__header">
+                <h1 class="login-form__logo"><img src="images/logo.png" alt=""></h1>
+                <h2 class="login-form__title">ログイン</h2>
+            </header>
+
+            <form action="#" method="post">
+                <div class="login-form__group">
+                    <input type="email" class="login-form__input" placeholder="メールアドレス" aria-label="メールアドレス">
+                </div>
+
+                <div class="login-form__group">
+                    <div class="login-form__password-wrapper">
+                        <input type="password" class="login-form__input" placeholder="パスワード" aria-label="パスワード">
+                        <img src="images/icon_pw_eye.svg" alt="" class="login-form__toggle-password">
+                    </div>
+                </div>
+
+                <div class="login-form__options">
+                    <input type="checkbox" id="remember" class="login-form__checkbox">
+                    <label for="remember" class="login-form__label">メールアドレスを保存する</label>
+                </div>
+
+                <div class="login-form__group">
+                    <button type="submit" class="login-form__button" onclick="location.href='questionnaire.html'">ログインする</button>
+                </div>
+            </form>
+
+            <footer class="login-form__footer">
+                <p class="login-form__footer-text">パスワードをお忘れの方<a href="#" class="login-form__link">パスワード再設定</a></p>
+                <p class="login-form__footer-text">確認メールが届かない方<a href="#" class="login-form__link">メール再送信</a></p>
+            </footer>
+        </main>
+    </div>
+
+</body>
+</html>

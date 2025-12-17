@@ -1,0 +1,404 @@
+.main-header {
+    height: 66px;
+}
+
+/* --- Block: notifications-content --- */
+.notifications-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 67px 0 0 237px;
+}
+
+/* --- Block: hero-banner --- */
+.hero-banner {
+    position: relative;
+    color: #87581E;
+    overflow: hidden;
+    background-image: url('../images/home/pic_notifications_01.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8%;
+}
+.hero-banner__text h2 {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+/* --- Block: notifications-area --- */
+.notifications-grid {
+    display: flex;
+}
+/* --- Block: notification-card --- */
+.notification-card {
+    width: 20%;
+    background-color: #fff;
+    border-right: 1px solid #e9ecef;
+    padding-bottom: 10px;
+}
+.notification-card:last-child {
+    border-right: none;
+}
+.notification-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+}
+.notification-card__title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #87581E;
+}
+.notification-card__title i {
+    margin-right: 8px;
+    color: #6c757d;
+}
+.notification-card__badge {
+    background-color: #DD2C00; /* 赤色 */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 30px;
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+.notification-card__list {
+    padding: 8px 16px;
+}
+
+/* --- Block: notification-item --- */
+.notification-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #E4E4E4;
+    border-left: 5px solid #E4E4E4;
+}
+.notification-item:last-child {
+    margin-bottom: 0;
+}
+.notification-item__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+.notification-item__header p {
+    display: flex;
+    align-items: center;
+}
+.notification-item__icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 12px;
+}
+.notification-item__icon--campaign { background-color: #ffc107; }
+.notification-item__icon--chat { background-color: #17a2b8; }
+.notification-item__icon--mission { background-color: #28a745; }
+.notification-item__icon--supplement { background-color: #6f42c1; }
+.notification-item__icon--delivery { background-color: #fd7e14; }
+.notification-item__icon--payment { background-color: #dc3545; }
+.notification-item__content {
+    flex-grow: 1;
+}
+.notification-item__text {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+.notification-item__meta {
+    font-size: 12px;
+    color: #6c757d;
+    margin-top: 4px;
+}
+.notification-item__time {
+    font-size: 10px;
+    color: #6c757d;
+    margin-left: 12px;
+    white-space: nowrap;
+}
+
+
+/* --- 基本設定 --- */
+:root {
+    --primary-color: #FFCC00;
+    --text-color: #343a40;
+    --border-color: #e9ecef;
+    --light-gray: #f8f9fa;
+    --gray: #6c757d;
+}
+
+
+/* --- Block: sidebar (左右共通) --- */
+.sidebar--right {
+    width: 320px;
+    flex-shrink: 0;
+    padding: 650px 24px 24px;
+}
+
+.main-area {
+    padding: 650px 20px 20px;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 700px;
+}
+
+/* --- Block: mission-card --- */
+.mission-card {
+    background-image: linear-gradient(#ffffff 40%, #fffae4);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    padding: 0 0 16px;
+}
+.mission-card__header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    font-size: 13px; 
+    color: #87581E;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    border-radius: 12px 12px 0 0;
+}
+.mission-card__header a { 
+    color: #87581E;
+}
+.mission-card__body { 
+    display: flex; 
+    gap: 24px;
+    padding: 0 16px;
+}
+.mission-card__body > * { 
+    min-width: auto; 
+    width: 35%;
+}
+.mission-card__progress {
+    text-align: center;
+    width: 25%;
+}
+.mission-card__title-group {
+    display: flex; 
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 0 16px;
+}
+.mission-card__title-group__inner {
+    flex: 1;
+    padding-left: 10px;
+}
+.mission-card__icon { width: 48px; height: 48px; border-radius: 50%; }
+.mission-card__title-group__header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+.mission-card__title {
+    font-size: 18px; 
+    font-weight: bold;
+    color: #87581E;
+}
+.mission-card__title-group__header a {
+    color: #87581E;
+    font-size: 12px;
+}
+.mission-card__level {
+    font-size: 12px;
+    color: #A0A0A0; 
+}
+.mission-card__level__star {
+    color: #FFCC00;
+    font-size: 14px;
+}
+.mission-card__image { width: 100%; border-radius: 8px; margin-bottom: 16px; }
+.mission-card__subtitle { 
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.mission-card__description { 
+    font-size: 12px; 
+    line-height: 1.6; 
+    color: var(--gray); 
+    margin-bottom: 10px; 
+}
+.mission-card__button { 
+    background-color: var(--primary-color); 
+    border: none; 
+    padding: 8px; 
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #87581E;
+}
+
+/* --- mission-card__details --- */
+.mission-card__details {
+    border: 6px solid var(--primary-color);
+    border-radius: 12px;
+}
+.mission-card__details .mission-card__image {
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.mission-card__details .mission-card__subtitle {
+    padding: 10px;
+}
+.mission-card__details .mission-card__description {
+    margin-bottom: 0;
+    padding: 10px;
+    background-color: #fff;
+}
+.mission-card__achievement {
+    font-size: 12px;
+    padding: 10px;
+    background-color: #ECEFF1;
+    display: flex; 
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 0 0 5px 5px;
+}
+.mission-card__achievement p {
+    padding-right: 10px;
+}
+
+/* --- トグルボタン --- */
+.mission-card__toggle {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 15px;
+    border-radius: 50px;
+    background-color: #dddddd;
+    cursor: pointer;
+    transition: background-color .4s;
+}
+
+.mission-card__toggle:has(:checked) {
+    background-color: #f09131;
+}
+
+.mission-card__toggle::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    background-color: #fff;
+    content: '';
+    transition: left .4s;
+}
+
+.mission-card__toggle:has(:checked)::after {
+    left: 15px;
+}
+
+.mission-card__toggle input {
+    display: none;
+}
+
+/* --- ドーナツグラフ --- */
+.progress-donut {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 16px auto;
+    display: grid;
+    place-items: center;
+    position: relative;
+    background: conic-gradient(var(--primary-color) calc(var(--percentage) * 1%), var(--border-color) 0);
+}
+.progress-donut::before {
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+}
+.progress-donut span { z-index: 1; }
+.progress-donut__label { font-size: 12px; color: var(--gray); transform: translateY(-10px); }
+.progress-donut__percent { font-size: 36px; font-weight: bold; transform: translateY(10px); }
+.progress-donut__percent small { font-size: 18px; }
+.progress-days { font-size: 13px; background-color: var(--light-gray); padding: 8px; border-radius: 8px; }
+.coupon-info { font-size: 12px; line-height: 1.5; color: var(--gray); margin-top: 16px; }
+.coupon-info strong { font-size: 16px; color: var(--text-color); }
+
+/* --- Block: widget (右サイドバー) --- */
+.widget {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+.widget__title { 
+    font-size: 13px; 
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #87581E;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    border-radius: 12px 12px 0 0;
+}
+.widget__title a { 
+    font-size: 12px;
+    color: #87581E;
+}
+.widget__ad-image { width: 100%; border-radius: 8px; }
+.points-display { 
+    font-size: 32px; 
+    font-weight: bold; 
+    text-align: center; 
+    color: var(--primary-color); 
+}
+.points-display small { font-size: 16px; }
+.badges-list { 
+    display: flex; 
+    gap: 8px; 
+}
+.badge-icon { font-size: 24px; color: var(--primary-color); }
+.widget__rank { 
+    font-weight: normal;
+}
+.progress-bar { 
+    height: 8px; 
+    background-color: var(--border-color); 
+    border-radius: 4px; 
+    overflow: hidden; 
+}
+.widget__image {
+    margin-bottom: 10px;
+}
+.progress-bar__inner { height: 100%; background-color: var(--primary-color); border-radius: 4px; }
+.timer-setting p { font-size: 13px; margin-bottom: 8px; color: var(--gray); }
+.timer-setting i { margin-right: 8px; }
+.calendar { width: 100%; border-collapse: collapse; text-align: center; font-size: 12px; }
+.calendar th, .calendar td { padding: 8px 4px; }
+.calendar th { color: var(--gray); font-weight: normal; }
+.calendar__day--today { background-color: var(--primary-color); color: var(--text-color); font-weight: bold; border-radius: 50%; }
+.widget__button { width: 100%; background-color: var(--primary-color); border: none; padding: 12px; border-radius: 8px; font-weight: bold; margin-top: 12px; }
