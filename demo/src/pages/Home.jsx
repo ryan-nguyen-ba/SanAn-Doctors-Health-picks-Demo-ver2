@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigationType } from 'react-router-dom'
 import Layout from '../components/Layout'
 import '../styles/home.css'
 
 function Home() {
+  const navigationType = useNavigationType()
+
+  useEffect(() => {
+    // Nếu quay lại màn này bằng nút Back/Forward trên browser,
+    // reload lại toàn bộ trang để reset layout gốc
+    if (navigationType === 'POP') {
+      window.location.reload()
+    }
+  }, [navigationType])
+
   const rightSidebarContent = (
     <>
       <div className="widget">

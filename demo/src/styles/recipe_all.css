@@ -1,19 +1,7 @@
+/* レイアウト関連は common.css に準拠 */
 .main-header {
     height: 66px;
 }
-.main-area {
-    padding: 90px 0 20px 20px;
-}
-.sidebar--right {
-    padding: 90px 24px 24px;
-    background-color: #fff;
-}
-
-/* --- Block: main-content --- */
-.main-content {
-    width: 100%;
-}
-
 
 /* --- Block: widget (右サイドバー) --- */
 .widget {

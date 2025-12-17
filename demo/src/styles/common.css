@@ -37,6 +37,8 @@ body {
     z-index: 10;
     padding: 24px 0;
     color: var(--text-brown);
+    overflow-y: auto;
+    flex-shrink: 0;
 }
 
 .sidebar--right {

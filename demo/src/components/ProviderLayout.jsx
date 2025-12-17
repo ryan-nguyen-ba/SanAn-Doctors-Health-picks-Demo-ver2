@@ -23,3 +23,4 @@ function ProviderLayout({ children, activeNav = 'dashboard', showRightSidebar = 
 
 export default ProviderLayout
 
+

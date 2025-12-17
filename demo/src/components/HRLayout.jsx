@@ -23,3 +23,4 @@ function HRLayout({ children, activeNav = 'dashboard', showRightSidebar = false,
 
 export default HRLayout
 
+

@@ -47,3 +47,4 @@ function ChartPlaceholder({ title, data, type = 'bar' }) {
 
 export default ChartPlaceholder
 
+

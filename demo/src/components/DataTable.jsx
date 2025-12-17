@@ -66,3 +66,4 @@ function DataTable({ columns, data, searchable = false, onSearch, filters = [] }
 
 export default DataTable
 
+
