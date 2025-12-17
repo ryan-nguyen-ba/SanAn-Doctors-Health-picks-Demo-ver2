@@ -13,7 +13,6 @@ import TimelineList from './pages/TimelineList'
 import TimelineDetail from './pages/TimelineDetail'
 import TimelineTop from './pages/TimelineTop'
 import TimelineServiceCard from './pages/TimelineServiceCard'
-import Settings from './pages/Settings'
 
 // Provider Portal
 import ProviderDashboard from './pages/provider/Dashboard'
@@ -62,7 +61,6 @@ function App() {
         <Route path="/timeline/detail" element={<TimelineDetail />} />
         <Route path="/timeline/top" element={<TimelineTop />} />
         <Route path="/timeline/service" element={<TimelineServiceCard />} />
-        <Route path="/settings" element={<Settings />} />
         
         {/* Provider Portal Routes */}
         <Route path="/provider/dashboard" element={<ProviderDashboard />} />

@@ -18,14 +18,6 @@ function Sidebar({ activeNav = 'home' }) {
     return location.pathname === navItems.find(item => item.key === key)?.path
   }
 
-  const handleNavClick = (event, item) => {
-    // Luôn reload toàn trang khi chuyển đến ホーム hoặc やること để reset CSS layout
-    if (item.key === 'home' || item.key === 'todo') {
-      event.preventDefault()
-      window.location.href = item.path
-    }
-  }
-
   return (
     <aside className="sidebar sidebar--left">
       <div className="profile">
@@ -37,15 +29,11 @@ function Sidebar({ activeNav = 'home' }) {
       <nav className="nav">
         <ul className="nav__list">
           {navItems.map((item) => (
-            <li
-              key={item.key}
+            <li 
+              key={item.key} 
               className={`nav__item ${isActive(item.key) ? 'nav__item--active' : ''}`}
             >
-              <Link
-                to={item.path}
-                className="nav__link"
-                onClick={(e) => handleNavClick(e, item)}
-              >
+              <Link to={item.path} className="nav__link">
                 <img src={item.icon} alt={item.label} className="nav__icon" />
                 {item.label}
               </Link>
@@ -57,10 +45,10 @@ function Sidebar({ activeNav = 'home' }) {
       <div className="sidebar__footer">
         <ul className="nav__list">
           <li className="nav__item">
-            <Link to="/settings" className="nav__link">
+            <a href="#" className="nav__link">
               <img src="/images/icon_settings.svg" alt="設定" className="nav__icon" />
               設定
-            </Link>
+            </a>
           </li>
           <li className="nav__item">
             <Link to="/login" className="nav__link">

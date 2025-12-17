@@ -1,18 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Layout from '../components/Layout'
 import '../styles/recipe_all.css'
 
 function RecipeAll() {
-  const [activeTab, setActiveTab] = useState('総合')
-
-  const tabs = [
-    { key: '総合', label: '総合' },
-    { key: '睡眠改善', label: '睡眠改善' },
-    { key: '疲労改善', label: '疲労改善' },
-    { key: '代謝改善', label: '代謝改善' },
-    { key: '便通改善', label: '便通改善' }
-  ]
-
   const myRecipes = [
     { id: 1, image: '/images/recipe_all/recipe_all_my_01.svg' },
     { id: 2, image: '/images/recipe_all/recipe_all_my_02.svg' }
@@ -116,34 +106,8 @@ function RecipeAll() {
     </>
   )
 
-  // Filter recipes based on active tab
-  const getFilteredRecipes = () => {
-    if (activeTab === '総合') return allRecipes
-    // For demo, show different subsets based on tab
-    if (activeTab === '睡眠改善') return allRecipes.slice(0, 2)
-    if (activeTab === '疲労改善') return allRecipes.slice(1, 4)
-    if (activeTab === '代謝改善') return allRecipes.slice(2, 5)
-    if (activeTab === '便通改善') return allRecipes.slice(3, 6)
-    return allRecipes
-  }
-
-  const filteredRecipes = getFilteredRecipes()
-
   return (
     <Layout activeNav="recipe" showRightSidebar={true} rightSidebarContent={rightSidebarContent}>
-      {/* Header tabs */}
-      <div className="recipe-tabs">
-        {tabs.map((tab) => (
-          <button
-            key={tab.key}
-            className={`recipe-tab ${activeTab === tab.key ? 'recipe-tab--active' : ''}`}
-            onClick={() => setActiveTab(tab.key)}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
-
       <section className="content-section">
         <h2 className="content-section__title">マイレシピ</h2>
         <div className="content-section__wrapper">
@@ -167,63 +131,22 @@ function RecipeAll() {
       </section>
 
       <section className="content-section">
-        <h2 className="content-section__title">
-          {activeTab === '総合' ? '全レシピ一覧' : `${activeTab}レシピ一覧`}
-        </h2>
+        <h2 className="content-section__title">全レシピ一覧</h2>
         <div className="content-section__wrapper">
-          {filteredRecipes.slice(0, 3).map((recipe) => (
+          {allRecipes.slice(0, 3).map((recipe) => (
             <div key={recipe.id} className="content-section__thumb">
               <img src={recipe.image} alt="" className="content-section__thumb__image" />
             </div>
           ))}
         </div>
-        {filteredRecipes.length > 3 && (
-          <div className="content-section__wrapper">
-            {filteredRecipes.slice(3, 6).map((recipe) => (
-              <div key={recipe.id} className="content-section__thumb">
-                <img src={recipe.image} alt="" className="content-section__thumb__image" />
-              </div>
-            ))}
-          </div>
-        )}
+        <div className="content-section__wrapper">
+          {allRecipes.slice(3, 6).map((recipe) => (
+            <div key={recipe.id} className="content-section__thumb">
+              <img src={recipe.image} alt="" className="content-section__thumb__image" />
+            </div>
+          ))}
+        </div>
       </section>
-
-      <style>{`
-        .recipe-tabs {
-          display: flex;
-          gap: 0;
-          margin-bottom: 20px;
-          border-bottom: 2px solid #e0e0e0;
-          padding: 0 20px;
-        }
-        .recipe-tab {
-          padding: 12px 24px;
-          border: none;
-          background: transparent;
-          font-size: 14px;
-          font-weight: 500;
-          color: #666;
-          cursor: pointer;
-          position: relative;
-          transition: all 0.2s;
-        }
-        .recipe-tab:hover {
-          color: #87581E;
-        }
-        .recipe-tab--active {
-          color: #87581E;
-          font-weight: bold;
-        }
-        .recipe-tab--active::after {
-          content: '';
-          position: absolute;
-          bottom: -2px;
-          left: 0;
-          right: 0;
-          height: 3px;
-          background: #FFCC00;
-        }
-      `}</style>
     </Layout>
   )
 }
